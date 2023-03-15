@@ -1,21 +1,16 @@
 import React from 'react';
-import toast from 'react-hot-toast';
+import headerimg from '../../assets/DSC_7898.jpg'
+import Body from './Body';
+
 
 const Home = () => {
-    const toast = () => {
-        const sum = 1;
-        const car = 1;
-        const vat = sum + car
-        if (vat === 2) {
 
-        }
-        console.log(vat)
-    }
     return (
-        <div>
-            <h1 className='text-6xl'>this is home</h1>
-            <button onClick={toast}>click me</button>
+        <div className=''>
+            <img className='w-full h-[900px] mt-[150px]' src={headerimg} alt="" />
+            <Body></Body>
 
+            <button className='btn ml-[555px] mt-[115px] mb-[81px] w-[253px] h-[66px] btn-ghost bg-[#E9E9E9] text-2xl'>apply now</button>
         </div>
     );
 };
