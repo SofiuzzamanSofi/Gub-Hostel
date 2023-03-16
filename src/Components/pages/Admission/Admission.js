@@ -15,7 +15,9 @@ function Admission() {
                 <div className="container mx-auto">
                     <div className="py-10">
                         <div className="text-center">
-                            <h1 className="text-3xl font-bold text-[#35DC66] uppercase">Admission Page</h1>
+                            <h1 className="text-3xl font-bold text-[#35DC66] uppercase">
+                                Admission Page
+                            </h1>
                         </div>
 
                         <div className="px-8 py-4 flex items-center justify-between pt-12 pb-6">
