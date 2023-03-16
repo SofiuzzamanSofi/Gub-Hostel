@@ -1,7 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/green-university.png'
+
+
+
+
+
 const Navbar = () => {
+
+
+
     const menuList = <>
         <li className='lg:ml-[147px] hidden lg:inline font-semibold'><div className="dropdown dropdown-hover">
             <label tabIndex={0} className="hover:text-green-400">FACILITIES</label>
@@ -10,10 +18,15 @@ const Navbar = () => {
                 <li className='my-2'><Link>HALL FACILITIES</Link></li>
             </ul>
         </div></li>
-        <li className='lg:ml-[147px] hover:text-green-400 font-semibold'><Link to=''>ADMISSION</Link></li>
-        <li className='lg:ml-[147px] font-semibold hover:text-green-400'><Link to=''>LOCATION</Link></li>
-        <li className='lg:ml-[147px] font-semibold hover:text-green-400'><Link to=''>FAQ</Link></li>
+        <li className='lg:ml-[147px] hover:text-green-400 font-semibold'><Link to='/admission'>ADMISSION</Link></li>
+        <li className='lg:ml-[147px] font-semibold hover:text-green-400'><Link to='/location'>LOCATION</Link></li>
+        <li className='lg:ml-[147px] font-semibold hover:text-green-400'><Link to='/faq'>FAQ</Link></li>
     </>
+
+
+
+
+
     return (
         <div>
             <div className="navbar bg-base-100 lg:pl-12 lg:pr-[75px] mt-[28px]">
@@ -27,7 +40,9 @@ const Navbar = () => {
                             {menuList}
                         </ul>
                     </div>
-                    <img className='w-[75px] lg:w-[227px] h-[50px] lg:h-[83.99px]' src={logo} alt="logo" />
+                    <Link to="/">
+                        <img className='w-[75px] lg:w-[227px] h-[50px] lg:h-[83.99px]' src={logo} alt="logo" />
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
