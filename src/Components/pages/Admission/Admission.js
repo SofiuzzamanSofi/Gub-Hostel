@@ -1,6 +1,12 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 
 function Admission() {
+
+
+    const location = useLocation();
+
+
     return (
         <div>
             <div>
@@ -10,7 +16,7 @@ function Admission() {
             </div>
             <div>
                 <div>
-                    HOME <span> &gt; </span> ADMISSION PAGE
+                    HOME <span> &gt; </span> <span className='uppercase'>{location.pathname.replace("/", "")}</span>
                 </div>
 
                 <div>
