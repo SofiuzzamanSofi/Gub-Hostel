@@ -17,7 +17,7 @@ const Footer = () => {
 
     return (
         <div>
-            <footer className="footer lg:h-[462px] py-[60px] pl-[35px] bg-black text-white">
+            <footer className="footer lg:h-[462px] py-[30px] px-[10px] lg:py-[60px] lg:pl-[35px] bg-black text-white">
                 <div>
                     <span className="footer-title text-white">ACADEMIC COLLABORATION & INSTITUTIONAL MEMBERSHIPS</span>
                     <div className='grid grid-cols-2 gap-5'>
