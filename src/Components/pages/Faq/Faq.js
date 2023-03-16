@@ -1,18 +1,29 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import HomeImage from '../../Home/HomeImage';
 
+
+
 function Faq() {
+
+    const location = useLocation();
+
+
     return (
         <div className="container mx-auto mt-4">
             <HomeImage />
-            <div>
-                <h1 className="text-3xl font-bold text-gray-800 mb-8">FAQ</h1>
+
+            <div className="px-8 py-4 flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                    <Link to="/" className="text-blue-400 hover:text-blue-300 transition-all">
+                        HOME
+                    </Link>
+                    <span>&gt;</span>
+                    <span className=" uppercase">{location.pathname.replace('/', '')}</span>
+                </div>
             </div>
-            <div className="flex items-center text-gray-600 mb-6">
-                <span>HOME</span>
-                <span className="mx-2">&gt;</span>
-                <span>FAQ</span>
-            </div>
+
+
             <div className="grid grid-cols-1 gap-6">
                 <div className="bg-white shadow rounded-lg p-6">
                     <h1 className="text-xl font-semibold text-gray-800 mb-4">

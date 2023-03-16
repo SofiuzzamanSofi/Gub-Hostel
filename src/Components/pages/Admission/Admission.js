@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import HomeImage from '../../Home/HomeImage';
 
 function Admission() {
@@ -15,20 +15,17 @@ function Admission() {
                         <div className="text-center">
                             <h1 className="text-3xl font-bold">Admission</h1>
                         </div>
-                        <div className="pt-5">
-                            <div className="flex justify-between items-center">
-                                <div>
-                                    <span className="text-gray-600">HOME</span>
-                                    <span className="mx-2">&gt;</span>
-                                    <span className="text-gray-600 uppercase">{location.pathname.replace('/', '')}</span>
-                                </div>
-                                <div>
-                                    <button className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none">
-                                        Apply for your seat now
-                                    </button>
-                                </div>
+
+                        <div className="px-8 py-4 flex items-center justify-between">
+                            <div className="flex items-center space-x-2">
+                                <Link to="/" className="text-blue-400 hover:text-blue-300 transition-all">
+                                    HOME
+                                </Link>
+                                <span>&gt;</span>
+                                <span className=" uppercase">{location.pathname.replace('/', '')}</span>
                             </div>
                         </div>
+
                         <div className="pt-5">
                             <div className="bg-white shadow-md p-5 rounded-md">
                                 <h1 className="text-xl font-bold pb-3">Admission Eligibility</h1>
