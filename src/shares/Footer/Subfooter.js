@@ -1,5 +1,4 @@
 import React from 'react';
-import Sofi from '../../Components/Home/Sofi';
 
 const Subfooter = () => {
     return (
@@ -9,7 +8,6 @@ const Subfooter = () => {
                     <p>Copyright © 2003-2022 <a href=""><span className='text-[#22B24C]'>Green University of Bangladesh</span></a> || All rights reserved.</p>
                 </div>
             </footer>
-            <Sofi></Sofi>
         </div>
     );
 };
