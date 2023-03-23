@@ -9,13 +9,13 @@ function Location() {
 
     return (
         <div>
-            <HomeImage />
+            {/* <HomeImage /> */}
 
             <div className='my-2'>
                 <div className="container mx-auto">
                     <div className="py-10">
                         <div className="text-center">
-                            <h1 className="text-3xl font-bold text-[#35DC66] uppercase">
+                            <h1 className="text-3xl mt-[110px] font-bold text-[#35DC66] uppercase">
                                 Location
                             </h1>
                         </div>

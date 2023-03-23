@@ -14,8 +14,8 @@ const Navbar = () => {
         <li className='lg:ml-[147px] hidden lg:inline font-semibold'><div className="dropdown dropdown-hover">
             <label tabIndex={0} className="hover:text-green-400">FACILITIES</label>
             <ul tabIndex={0} className="dropdown-content menu p-4 shadow bg-base-100 rounded-box mt-[210px] w-52">
-                <li className='my-2'><Link>ROOM FACILITIES</Link></li>
-                <li className='my-2'><Link>HALL FACILITIES</Link></li>
+                <li className='my-2'><Link to='roomfacilities'>ROOM FACILITIES</Link></li>
+                <li className='my-2'><Link to='/hallfacilities'>HALL FACILITIES</Link></li>
             </ul>
         </div></li>
         <li className='lg:ml-[147px] hover:text-green-400 font-semibold'><Link to='/admission'>ADMISSION</Link></li>
@@ -54,8 +54,8 @@ const Navbar = () => {
                     <div className="dropdown lg:dropdown-hover dropdown-end lg:hidden font-semibold mr-[30px]">
                         <label tabIndex={0} className="hover:text-green-400 font-semibold lg:text-xl ">FACILITIES</label>
                         <ul tabIndex={0} className="dropdown-content menu p-4 shadow bg-base-100 rounded-box w-52">
-                            <li className='my-2 lg:text-xl'><Link>ROOM FACILITIES</Link></li>
-                            <li className='my-2 lg:text-xl'><Link>HALL FACILITIES</Link></li>
+                            <li className='my-2 lg:text-xl'><Link to='/roomfacilities'>ROOM FACILITIES</Link></li>
+                            <li className='my-2 lg:text-xl'><Link to='/hallfacilities'>HALL FACILITIES</Link></li>
                         </ul>
                     </div>
                     <div className="dropdown dropdown-bottom dropdown-end">
