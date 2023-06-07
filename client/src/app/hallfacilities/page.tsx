@@ -7,7 +7,11 @@ import Image from 'next/image';
 
 
 // import { Link, useLocation } from 'react-router-dom';
-import hallFacilitiesDataCart from './../../workArea/components/hallFacilitiesData/hallFacilitiesDataCart';
+
+import { hallFacilitiesDataTypes } from './../../workArea/types/allCommonTypes';
+import { hallFacilitiesData } from '@/workArea/components/hallFacilitiesData/hallFacilitiesData';
+import HallFacilitiesDataCart from '@/workArea/components/hallFacilitiesData/hallFacilitiesDataCart';
+
 
 
 
@@ -17,6 +21,7 @@ import hallFacilitiesDataCart from './../../workArea/components/hallFacilitiesDa
 const HallFacilities = () => {
     // const location = useLocation()
 
+    const datas: hallFacilitiesDataTypes[] = hallFacilitiesData;
 
     return (
         <div>
@@ -33,12 +38,12 @@ const HallFacilities = () => {
             </div>
             <div className='grid grid-cols-1 mt-[59px] mb-[73px] md:grid-cols-2 lg:grid-cols-3  gap-[75px] mx-[30px] lg:ml-[96px] lg:mr-[96px]'>
                 {/* {
-                    datas.map(data => <hallFacilitiesDataCart
+                    datas.map(data => <HallFacilitiesDataCart
                         key={data.id}
                         data={data}
                     />)
                 } */}
-                <hallFacilitiesDataCart />
+                <HallFacilitiesDataCart />
             </div>
         </div>
     );
