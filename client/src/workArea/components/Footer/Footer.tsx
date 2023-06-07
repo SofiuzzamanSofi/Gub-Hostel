@@ -21,9 +21,6 @@ const Footer: React.FC = () => {
 
     return (
         <div>
-            <div>
-                <h1 className='text-4xl bg-orange-600'>This is h1</h1>
-            </div>
             <footer className="footer lg:h-[462px] py-[30px] px-[10px] lg:py-[60px] lg:pl-[35px] bg-black text-white">
                 <div>
                     <span className="footer-title text-white">ACADEMIC COLLABORATION & INSTITUTIONAL MEMBERSHIPS</span>

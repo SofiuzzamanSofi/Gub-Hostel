@@ -490,6 +490,32 @@
         "async": false
       }
     },
+    "(app-client)/./src/workArea/assets/green-university.png": {
+      "*": {
+        "id": "(sc_client)/./src/workArea/assets/green-university.png",
+        "name": "*",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./src/workArea/assets/green-university.png",
+        "name": "",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./src/workArea/assets/green-university.png",
+        "name": "default",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      }
+    },
     "(app-client)/./node_modules/next/dist/client/image.js": {
       "*": {
         "id": "(sc_client)/./node_modules/next/dist/client/image.js",
@@ -1504,6 +1530,30 @@
     },
     "C:\\Users\\sofiu\\OneDrive\\Desktop\\projectWorkSpace\\Green-University\\Gub-Hostel\\client\\src\\workArea\\assets\\footerlogo9.jpg#default": {
       "id": "(app-client)/./src/workArea/assets/footerlogo9.jpg",
+      "name": "default",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\sofiu\\OneDrive\\Desktop\\projectWorkSpace\\Green-University\\Gub-Hostel\\client\\src\\workArea\\assets\\green-university.png": {
+      "id": "(app-client)/./src/workArea/assets/green-university.png",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\sofiu\\OneDrive\\Desktop\\projectWorkSpace\\Green-University\\Gub-Hostel\\client\\src\\workArea\\assets\\green-university.png#": {
+      "id": "(app-client)/./src/workArea/assets/green-university.png",
+      "name": "",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\sofiu\\OneDrive\\Desktop\\projectWorkSpace\\Green-University\\Gub-Hostel\\client\\src\\workArea\\assets\\green-university.png#default": {
+      "id": "(app-client)/./src/workArea/assets/green-university.png",
       "name": "default",
       "chunks": [
         "app/layout:static/chunks/app/layout.js"
