@@ -313,7 +313,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/image.js",
         "name": "*",
         "chunks": [
-          "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+          "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
         ],
         "async": false
       },
@@ -321,7 +321,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/image.js",
         "name": "",
         "chunks": [
-          "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+          "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
         ],
         "async": false
       },
@@ -329,7 +329,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/image.js",
         "name": "default",
         "chunks": [
-          "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+          "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
         ],
         "async": false
       }
@@ -339,7 +339,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
         "name": "*",
         "chunks": [
-          "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+          "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
         ],
         "async": false
       },
@@ -347,7 +347,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
         "name": "",
         "chunks": [
-          "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+          "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
         ],
         "async": false
       },
@@ -355,7 +355,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
         "name": "default",
         "chunks": [
-          "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+          "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
         ],
         "async": false
       },
@@ -363,7 +363,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
         "name": "defaultHead",
         "chunks": [
-          "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+          "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
         ],
         "async": false
       }
@@ -659,7 +659,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "*",
         "chunks": [
-          "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+          "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
         ],
         "async": false
       },
@@ -667,7 +667,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "",
         "chunks": [
-          "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+          "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
         ],
         "async": false
       },
@@ -675,7 +675,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "default",
         "chunks": [
-          "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+          "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
         ],
         "async": false
       }
@@ -702,6 +702,32 @@ self.__RSC_MANIFEST={
         "name": "default",
         "chunks": [
           "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./src/workArea/assets/roomfacilities.jpg": {
+      "*": {
+        "id": "(sc_client)/./src/workArea/assets/roomfacilities.jpg",
+        "name": "*",
+        "chunks": [
+          "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./src/workArea/assets/roomfacilities.jpg",
+        "name": "",
+        "chunks": [
+          "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./src/workArea/assets/roomfacilities.jpg",
+        "name": "default",
+        "chunks": [
+          "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
         ],
         "async": false
       }
@@ -1462,7 +1488,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "*",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1470,7 +1496,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "*",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1478,7 +1504,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1486,7 +1512,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1494,7 +1520,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "default",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1502,7 +1528,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "default",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1510,7 +1536,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "*",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1518,7 +1544,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "*",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1526,7 +1552,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1534,7 +1560,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1542,7 +1568,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "default",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1550,7 +1576,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "default",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1558,7 +1584,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "defaultHead",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1566,7 +1592,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "defaultHead",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1852,7 +1878,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1860,7 +1886,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1868,7 +1894,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1876,7 +1902,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1884,7 +1910,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "default",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1892,7 +1918,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "default",
       "chunks": [
-        "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     },
@@ -1917,6 +1943,30 @@ self.__RSC_MANIFEST={
       "name": "default",
       "chunks": [
         "app/hallfacilities/page:static/chunks/app/hallfacilities/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\sofiu\\OneDrive\\Desktop\\projectWorkSpace\\Green-University\\Gub-Hostel\\client\\src\\workArea\\assets\\roomfacilities.jpg": {
+      "id": "(app-client)/./src/workArea/assets/roomfacilities.jpg",
+      "name": "*",
+      "chunks": [
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\sofiu\\OneDrive\\Desktop\\projectWorkSpace\\Green-University\\Gub-Hostel\\client\\src\\workArea\\assets\\roomfacilities.jpg#": {
+      "id": "(app-client)/./src/workArea/assets/roomfacilities.jpg",
+      "name": "",
+      "chunks": [
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\sofiu\\OneDrive\\Desktop\\projectWorkSpace\\Green-University\\Gub-Hostel\\client\\src\\workArea\\assets\\roomfacilities.jpg#default": {
+      "id": "(app-client)/./src/workArea/assets/roomfacilities.jpg",
+      "name": "default",
+      "chunks": [
+        "app/roomfacilities/page:static/chunks/app/roomfacilities/page.js"
       ],
       "async": false
     }

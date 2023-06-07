@@ -1,8 +1,9 @@
 import React from 'react';
 import { FaGreaterThan } from 'react-icons/fa';
-import { Link, useLocation } from 'react-router-dom';
-import img from '../../../assets/roomfacilities.jpg'
+import img from '@layout/assets/roomfacilities.jpg'
 import Data2 from './Data2';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const RoomFacilities = () => {
     const datas = [
@@ -76,19 +77,19 @@ const RoomFacilities = () => {
 
         },
     ]
-    const location = useLocation()
+    // const location = useLocation()
     return (
         <div>
-            <img className='h-[400px] lg:h-[673px] w-full mt-[50px] lg:mt-[150px]' src={img} alt="roomPhoto" />
+            <Image className='h-[400px] lg:h-[673px] w-full mt-[50px] lg:mt-[150px]' src={img} alt="roomPhoto" />
             <h1 className='uppercase text-center text-[40px] mt-[48px] font-extrabold text-[#35DC66]'>hall facilities</h1>
             <div className="flex items-center ml-[23px] space-x-2 mt-[48px]">
-                <Link to="/" className="text-blue-400 hover:text-blue-300 transition-all">
+                <Link href="/" className="text-blue-400 hover:text-blue-300 transition-all">
                     HOME
                 </Link>
                 <span className="text-black dark:text-white">
                     <FaGreaterThan />
                 </span>
-                <span className="text-black dark:text-white uppercase">{location.pathname.replace('/', '')}</span>
+                {/* <span className="text-black dark:text-white uppercase">{location.pathname.replace('/', '')}</span> */}
             </div>
             <div className='grid grid-cols-1 mt-[59px] mb-[73px] md:grid-cols-2 lg:grid-cols-3  gap-[75px] mx-[30px] lg:ml-[96px] lg:mr-[96px]'>
                 {datas.map(data => <Data2
