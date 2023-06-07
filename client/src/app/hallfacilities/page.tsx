@@ -3,14 +3,15 @@ import { FaGreaterThan } from 'react-icons/fa';
 import hallFacilitiesImage from '@layout/assets/hallfacilities.jpg'
 import Link from 'next/link';
 import Image from 'next/image';
+import HallFacilitiesDataCart from '@/workArea/components/hallFacilitiesData/HallFacilitiesDataCart';
 
 
 
 // import { Link, useLocation } from 'react-router-dom';
 
-import { hallFacilitiesDataTypes } from './../../workArea/types/allCommonTypes';
-import { hallFacilitiesData } from '@/workArea/components/hallFacilitiesData/hallFacilitiesData';
-import HallFacilitiesDataCart from '@/workArea/components/hallFacilitiesData/hallFacilitiesDataCart';
+// import { hallFacilitiesDataTypes } from './../../workArea/types/allCommonTypes';
+// import { hallFacilitiesData } from '@/workArea/components/hallFacilitiesData/hallFacilitiesData';
+
 
 
 
@@ -21,7 +22,7 @@ import HallFacilitiesDataCart from '@/workArea/components/hallFacilitiesData/hal
 const HallFacilities = () => {
     // const location = useLocation()
 
-    const datas: hallFacilitiesDataTypes[] = hallFacilitiesData;
+    // const datas: hallFacilitiesDataTypes[] = hallFacilitiesData;
 
     return (
         <div>
