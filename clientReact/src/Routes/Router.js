@@ -6,6 +6,7 @@ import HallFacilities from "../Components/pages/HallFacilities/HallFacilities";
 import Location from "../Components/pages/Location/Location";
 import RoomFacilities from "../Components/pages/RoomFacilities/RoomFacilities";
 import Main from "../layouts/Main/Main";
+import DataReceived from "../Components/pages/DataSend/DataReceived";
 
 const router = createBrowserRouter([
     {
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
             {
                 path: '/roomfacilities',
                 element: <RoomFacilities />
-            }
+            },
+            {
+                path: '/data/:id',
+                element: <DataReceived />
+            },
         ]
     }
 ])

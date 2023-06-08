@@ -3,7 +3,8 @@ import { FaGreaterThan } from 'react-icons/fa';
 import hallFacilitiesImage from '@layout/assets/hallfacilities.jpg'
 import Link from 'next/link';
 import Image from 'next/image';
-import HallFacilitiesDataCart from '@/workArea/components/hallFacilitiesData/HallFacilitiesDataCart';
+import HallFacilitiesDataCart from '../workArea/components/hallFacilitiesData/HallFacilitiesDataCart';
+
 
 
 
