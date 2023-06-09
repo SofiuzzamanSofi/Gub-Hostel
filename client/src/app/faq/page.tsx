@@ -4,6 +4,7 @@ import React from 'react';
 
 import { FaGreaterThan } from 'react-icons/fa';
 import CommonButton from './../../workArea/components/CommonButton/CommonButton';
+import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 
 
 const Faq: React.FC = () => {
@@ -11,10 +12,10 @@ const Faq: React.FC = () => {
     // const location = useLocation();
 
     return (
-        <div>
+        <div className='my-12'>
             <HomeImage />
 
-            <div className='my-2'>
+            <div className=''>
                 <div className="container mx-auto">
                     <div className="py-10">
                         <div className="text-center">
@@ -23,17 +24,7 @@ const Faq: React.FC = () => {
                             </h1>
                         </div>
 
-                        <div className="px-8 py-4 flex items-center justify-between pt-12 pb-6">
-                            <div className="flex items-center space-x-2">
-                                <Link href="/" className="text-blue-400 hover:text-blue-300 transition-all">
-                                    HOME
-                                </Link>
-                                <span className="text-black dark:text-white">
-                                    <FaGreaterThan />
-                                </span>
-                                {/* <span className="text-black dark:text-white uppercase">{location.pathname.replace('/', '')}</span> */}
-                            </div>
-                        </div>
+                        <CommonHomeButton />
 
 
 

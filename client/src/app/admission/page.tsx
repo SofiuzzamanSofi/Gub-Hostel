@@ -3,6 +3,7 @@ import { FaGreaterThan } from 'react-icons/fa';
 import HomeImage from '@/workArea/components/Home/HomeImage';
 // import { useNavigation } from 'next/navigation';
 import CommonButton from './../../workArea/components/CommonButton/CommonButton';
+import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 
 
 
@@ -12,10 +13,10 @@ const Admission: React.FC = () => {
 
 
     return (
-        <div>
+        <div className='my-12'>
             <HomeImage />
 
-            <div className='my-2'>
+            <div >
                 <div className="container mx-auto">
                     <div className="py-10">
                         <div className="text-center">
@@ -24,17 +25,7 @@ const Admission: React.FC = () => {
                             </h1>
                         </div>
 
-                        <div className="px-8 py-4 flex items-center justify-between pt-12 pb-6">
-                            <div className="flex items-center space-x-2">
-                                <Link href={"/"} className="text-blue-400 hover:text-blue-300 transition-all">
-                                    HOME
-                                </Link>
-                                <span className="text-black dark:text-white">
-                                    <FaGreaterThan />
-                                </span>
-                                {/* <span className="text-black dark:text-white uppercase">{router.pathname.replace('/', '')}</span> */}
-                            </div>
-                        </div>
+                        <CommonHomeButton />
 
                         <div className="bg-white dark:bg-slate-700  shadow-md p-5 rounded-md my-5">
                             <h1 className="text-xl font-bold pb-3 text-[#35DC66]">

@@ -13,17 +13,17 @@ const Location: React.FC = () => {
 
 
     return (
-        <div>
+        <div className='my-12'>
             {/* <HomeImage /> */}
-            <div className="container mx-auto my-12">
+            <div className="container mx-auto">
                 <div className="">
                     <div className="text-center">
-                        <h1 className="text-3xl mt-[110px] font-bold text-[#35DC66] uppercase">
+                        <h1 className="text-3xl font-bold text-[#35DC66] uppercase">
                             Location
                         </h1>
                     </div>
 
-                    <div className="px-8 flex items-center justify-between">
+                    <div className="p-4 flex items-center justify-between pt-12 pb-6">
                         <div className="flex items-center space-x-2">
                             <Link href="/" className="text-blue-400 hover:text-blue-300 transition-all">
                                 HOME
@@ -39,7 +39,7 @@ const Location: React.FC = () => {
 
                     <div>
                         <div>
-                            <h1 className='text-3xl font-semibold text-black dark:text-white pt-20 pb-12 '>Google Maps</h1>
+                            <h1 className='text-3xl font-semibold text-black dark:text-white py-8 '>Google Maps</h1>
                         </div>
                         <div className='flex flex-col md:flex-row gap-0'>
                             <Image src={maps} alt="Green University on Google Maps" className="" />
