@@ -74,8 +74,8 @@ const Header: React.FC = () => {
                             <span className='bordar px-4 py-2 bg-green-500 hover:bg-green-600 rounded-md text-white'>PORTAL</span>
                         </label>
                         <ul tabIndex={0} className="dropdown-content menu p-3 shadow bg-base-100 rounded-box w-52">
-                            <Link href={''}><li className='my-2 text-center hover:text-green-400'>LOGIN</li></Link>
-                            <Link href={''}><li className='my-2 text-center hover:text-green-400'>SIGNUP</li></Link>
+                            <Link href={'/signin'}><li className='my-2 text-center hover:text-green-400'>SIGN IN</li></Link>
+                            <Link href={'/signup'}><li className='my-2 text-center hover:text-green-400'>SIGN UP</li></Link>
 
                         </ul>
                     </div>
