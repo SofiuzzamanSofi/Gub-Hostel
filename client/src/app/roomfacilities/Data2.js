@@ -5,7 +5,7 @@ const Data2 = ({ data }) => {
     const { title, para } = data
     return (
         <div>
-            <h1 className='text-2xl text-[#35DC66] font-bold mb-[14px]'>{title}</h1>
+            <h1 className='text-2xl text-[#35DC66] font-bold mb-[14px] uppercase'>{title}</h1>
             <div>
                 {
                     para?.map(p => <Para

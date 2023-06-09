@@ -26,8 +26,8 @@ const HallFacilities = () => {
     // const datas: hallFacilitiesDataTypes[] = hallFacilitiesData;
 
     return (
-        <div>
-            <Image className='lg:h-[673px] h-[400px] mt-[50px] lg:mt-[150px] w-full' src={hallFacilitiesImage} alt="" />
+        <div className=" border-red-600 border-8">
+            <Image className='lg:h-[673px] h-[400px] mt-[50px] lg:mt-[150px] w-full ' src={hallFacilitiesImage} alt="" />
             <h1 className='uppercase text-center text-[40px] mt-[48px] font-extrabold text-[#35DC66]'>hall facilities</h1>
             <div className="flex items-center ml-[23px] space-x-2 mt-[48px]">
                 <Link href="/" className="text-blue-400 hover:text-blue-300 transition-all">

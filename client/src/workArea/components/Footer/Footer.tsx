@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
                     <Link className="link link-hover font-thin" href={''}>Permanent campus: <br />
                         Purbachal American City (Kanchon, Rupgonj).</Link>
                     <Link className="link link-hover font-thin" href={''}>Cell: 01324713507, 01324713508</Link>
-                    <p className="link link-hover font-thin">Email: <a href="" className='text-[#22B24C]'>admission@green.edu.bd</a></p>
+                    <p className="link link-hover font-thin ">Email: <a href="" className=''>admission@green.edu.bd</a></p>
                 </div>
                 <div>
                     <span className="footer-title text-white">connect with us</span>

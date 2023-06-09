@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import { FaGreaterThan } from 'react-icons/fa';
+import CommonButton from './../../workArea/components/CommonButton/CommonButton';
 
 
 const Faq: React.FC = () => {
@@ -131,11 +132,8 @@ const Faq: React.FC = () => {
                         </div>
 
 
-                        <div className="mt-8 text-center">
-                            <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg">
-                                Apply for your seat now
-                            </button>
-                        </div>
+                        <CommonButton buttonText="Apply for your seat now" />
+
                     </div>
                 </div>
             </div>

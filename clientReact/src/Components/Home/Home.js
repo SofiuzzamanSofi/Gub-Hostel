@@ -10,7 +10,7 @@ const Home = () => {
             <HomeImage />
             <Body></Body>
 
-            <button className='btn ml-[60px] lg:ml-[555px] mt-[115px] mb-[81px] w-[253px] h-[66px] btn-ghost bg-[#E9E9E9] text-2xl'>apply now</button>
+            <button className='ml-[60px] lg:ml-[555px] mt-[115px] mb-[81px] w-[253px] h-[66px] bg-[#E9E9E9] text-2xl'>apply now</button>
         </div>
     );
 };

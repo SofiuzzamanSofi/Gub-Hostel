@@ -12,16 +12,19 @@ const Header: React.FC = () => {
 
 
     const menuList = <>
-        <li className='lg:ml-[147px] hidden lg:inline font-semibold'><div className="dropdown dropdown-hover">
-            <label tabIndex={0} className="hover:text-green-400">FACILITIES</label>
-            <ul tabIndex={0} className="dropdown-content menu p-4 shadow bg-base-100 rounded-box mt-[210px] w-52">
-                <li className='my-2'><Link href='roomfacilities'>ROOM FACILITIES</Link></li>
-                <li className='my-2'><Link href='/hallfacilities'>HALL FACILITIES</Link></li>
-            </ul>
-        </div></li>
-        <li className='lg:ml-[147px] hover:text-green-400 font-semibold'><Link href='/admission'>ADMISSION</Link></li>
-        <li className='lg:ml-[147px] font-semibold hover:text-green-400'><Link href='/location'>LOCATION</Link></li>
-        <li className='lg:ml-[147px] font-semibold hover:text-green-400'><Link href='/faq'>FAQ</Link></li>
+        <li className='lg:ml-[147px] hidden lg:inline font-semibold'>
+            <div className="dropdown dropdown-hover">
+                <label tabIndex={0} className="">FACILITIES</label>
+                <ul tabIndex={0} className="dropdown-content menu p-4 shadow bg-base-100 rounded-box mt-44 w-52">
+                    <li className='my-2'><Link href='roomfacilities'>ROOM FACILITIES</Link></li>
+                    <li className='my-2'><Link href='/hallfacilities'>HALL FACILITIES</Link></li>
+                </ul>
+            </div>
+        </li>
+
+        <li className='lg:ml-[147px] font-semibold'><Link href='/admission'>ADMISSION</Link></li>
+        <li className='lg:ml-[147px] font-semibold'><Link href='/location'>LOCATION</Link></li>
+        <li className='lg:ml-[147px] font-semibold'><Link href='/faq'>FAQ</Link></li>
     </>
 
 
@@ -30,7 +33,7 @@ const Header: React.FC = () => {
 
     return (
         <div>
-            <div className="navbar bg-base-100 lg:pl-12 lg:pr-[75px] mt-[28px]">
+            <div className="navbar bg-base-100 py-2">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -45,13 +48,19 @@ const Header: React.FC = () => {
                         <Image className='w-[75px] lg:w-[227px] h-[50px] lg:h-[83.99px]' src={logo} alt="logo" />
                     </Link>
                 </div>
+
+
+
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
 
                         {menuList}
                     </ul>
                 </div>
-                <div className="navbar-end">
+
+
+                <div className="navbar-end pr-2">
+
                     <div className="dropdown lg:dropdown-hover dropdown-end lg:hidden font-semibold mr-[30px]">
                         <label tabIndex={0} className="hover:text-green-400 font-semibold lg:text-xl ">FACILITIES</label>
                         <ul tabIndex={0} className="dropdown-content menu p-4 shadow bg-base-100 rounded-box w-52">
@@ -59,15 +68,18 @@ const Header: React.FC = () => {
                             <li className='my-2 lg:text-xl'><Link href='/hallfacilities'>HALL FACILITIES</Link></li>
                         </ul>
                     </div>
-                    <div className="dropdown dropdown-bottom dropdown-end">
 
-                        <label tabIndex={0} className="  font-semibold lg:text-xl hover:text-green-400">Portal</label>
+                    <div className="dropdown dropdown-hover dropdown-bottom dropdown-end">
+                        <label tabIndex={0} className="  font-semibold lg:text-xl hover:text-green-400">
+                            <span className='bordar px-4 py-2 bg-green-500 hover:bg-green-600 rounded-md text-white'>PORTAL</span>
+                        </label>
                         <ul tabIndex={0} className="dropdown-content menu p-3 shadow bg-base-100 rounded-box w-52">
                             <Link href={''}><li className='my-2 text-center hover:text-green-400'>LOGIN</li></Link>
                             <Link href={''}><li className='my-2 text-center hover:text-green-400'>SIGNUP</li></Link>
 
                         </ul>
                     </div>
+
                 </div>
             </div>
         </div>
