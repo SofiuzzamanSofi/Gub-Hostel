@@ -12,7 +12,7 @@ const Header: React.FC = () => {
 
 
     const menuList = <>
-        <li className='lg:ml-[147px] hidden lg:inline font-semibold'>
+        <li className='hidden lg:inline font-semibold'>
             <div className="dropdown dropdown-hover">
                 <label tabIndex={0} className="">FACILITIES</label>
                 <ul tabIndex={0} className="dropdown-content menu p-4 shadow bg-base-100 rounded-box mt-44 w-52">
@@ -22,9 +22,9 @@ const Header: React.FC = () => {
             </div>
         </li>
 
-        <li className='lg:ml-[147px] font-semibold'><Link href='/admission'>ADMISSION</Link></li>
-        <li className='lg:ml-[147px] font-semibold'><Link href='/location'>LOCATION</Link></li>
-        <li className='lg:ml-[147px] font-semibold'><Link href='/faq'>FAQ</Link></li>
+        <li className='font-semibold'><Link href='/admission'>ADMISSION</Link></li>
+        <li className='font-semibold'><Link href='/location'>LOCATION</Link></li>
+        <li className='font-semibold'><Link href='/faq'>FAQ</Link></li>
     </>
 
 
@@ -52,7 +52,7 @@ const Header: React.FC = () => {
 
 
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 gap-8">
 
                         {menuList}
                     </ul>
@@ -71,7 +71,7 @@ const Header: React.FC = () => {
 
                     <div className="dropdown dropdown-hover dropdown-bottom dropdown-end">
                         <label tabIndex={0} className="  font-semibold lg:text-xl hover:text-green-400">
-                            <span className='bordar px-4 py-2 bg-green-500 hover:bg-green-600 rounded-md text-white'>PORTAL</span>
+                            <span className='bordar p-4 bg-green-500 hover:bg-green-600 rounded-md text-white'>PORTAL</span>
                         </label>
                         <ul tabIndex={0} className="dropdown-content menu p-3 shadow bg-base-100 rounded-box w-52">
                             <Link href={'/signin'}><li className='my-2 text-center hover:text-green-400'>SIGN IN</li></Link>
