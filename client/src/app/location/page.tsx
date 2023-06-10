@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import maps from '@layout/assets/maps.png';
 import { FaGreaterThan } from 'react-icons/fa';
+import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 // import { useNavigation } from 'next/navigation';
 
 
@@ -23,17 +24,7 @@ const Location: React.FC = () => {
                         </h1>
                     </div>
 
-                    <div className="p-4 flex items-center justify-between pt-12 pb-6">
-                        <div className="flex items-center space-x-2">
-                            <Link href="/" className="text-blue-400 hover:text-blue-300 transition-all">
-                                HOME
-                            </Link>
-                            <span className="text-black dark:text-white">
-                                <FaGreaterThan />
-                            </span>
-                            {/* <span className="text-black dark:text-white uppercase">{location.pathname.replace('/', '')}</span> */}
-                        </div>
-                    </div>
+                    <CommonHomeButton />
 
 
 
