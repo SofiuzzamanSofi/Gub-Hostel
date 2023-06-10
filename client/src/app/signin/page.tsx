@@ -1,26 +1,26 @@
 "use client"
 
-
+import { FC, useState } from 'react';
+import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
-
-import { FC, useState } from 'react';
-import { useRouter } from 'next/navigation';
-
-
-
 
 
 const SignIn: FC = () => {
 
 
-    const router = useRouter();
     const [studentId, setStudentId] = useState('');
     const [studentName, setStudentName] = useState('');
     const [department, setDepartment] = useState('');
     const [semester, setSemester] = useState('');
     const [mobile, setMobile] = useState('');
     const [mail, setMail] = useState('');
+
+    const router = useRouter();
+    const pathname = usePathname()
+    const pathNameTotalArray = pathname.split("/")
+    const pathNameArray = pathNameTotalArray.filter((path) => path !== "")
 
 
 
@@ -48,7 +48,10 @@ const SignIn: FC = () => {
                         </h1>
                     </div>
 
-                    <CommonHomeButton />
+
+
+                    <CommonHomeButton pathNameArray={pathNameArray} />
+
 
                     <div className='shadow-2xl dark:border border-black rounded-md max-w-[60rem] items-center mx-auto p-4 md:p-16'>
                         <div>
