@@ -1,13 +1,12 @@
-import CommonButton from '@/workArea/components/CommonButton/CommonButton'
-import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton'
-import { FC } from 'react'
+import CommonButton from '@/workArea/components/CommonButton/CommonButton';
+import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
+import { FC } from 'react';
 
+const handleSignUp = () => {
+    // Handle sign up logic here
+};
 
-interface signupProps {
-
-}
-
-const signup: FC<signupProps> = ({ }) => {
+const signup: FC = () => {
     return (
         <div className='my-12'>
             {/* <HomeImage /> */}
@@ -21,32 +20,32 @@ const signup: FC<signupProps> = ({ }) => {
 
                     <CommonHomeButton />
 
-
-
                     <div className='border rounded-md max-w-[60rem] items-center mx-auto p-16'>
                         <div>
-                            <h1 className='text-center text-2xl '>Sign up for seat</h1>
-                            <hr className='mt-4' />
+                            <h1 className='text-center text-2xl dark:text-white'>Sign up for seat</h1>
+                            <hr className='mt-4 p-[0.05rem] bg-[#22B24C]' />
                         </div>
                         <div>
-                            <form>
+                            <form onSubmit={handleSignUp}>
                                 <div className='my-11 grid'>
-
-                                    <input className='my-4 p-4 rounded-md' type="text" name="studentId" id="" placeholder='Student Id' />
-                                    <input className='my-4 p-4 rounded-md' type="text" name="studentName" id="" placeholder='Student Name' />
-                                    <input className='my-4 p-4 rounded-md' type="text" name="department" id="" placeholder='Department' />
-                                    <input className='my-4 p-4 rounded-md' type="text" name="semester" id="" placeholder='Semester' />
+                                    <input className='my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white' type="text" name="studentId" placeholder='Student Id' />
+                                    <input className='my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white' type="text" name="studentName" placeholder='Student Name' />
+                                    <input className='my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white' type="text" name="department" placeholder='Department' />
+                                    <input className='my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white' type="text" name="semester" placeholder='Semester' />
+                                    <input className='my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white' type="text" name="mobile" placeholder='Mobile No' />
+                                    <input className='my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white' type="text" name="mail" placeholder='Student Mail' />
                                 </div>
                                 <div>
                                     <CommonButton buttonText="Sign Up" />
+                                    <input type="submit" value="Sign Up" />
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div >
-    )
-}
+        </div>
+    );
+};
 
-export default signup
+export default signup;
