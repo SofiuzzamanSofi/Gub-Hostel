@@ -1,12 +1,35 @@
+"use client"
+
+
 import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
-const handleSignUp = () => {
-    // Handle sign up logic here
-};
+
+
+
 
 const signup: FC = () => {
+
+
+    const [studentId, setStudentId] = useState('');
+    const [studentName, setStudentName] = useState('');
+    const [department, setDepartment] = useState('');
+    const [semester, setSemester] = useState('');
+    const [mobile, setMobile] = useState('');
+    const [mail, setMail] = useState('');
+
+
+
+
+    const handleSignUp = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        // Handle sign up logic here
+    };
+
+
+
+
     return (
         <div className='my-12'>
             {/* <HomeImage /> */}
@@ -27,17 +50,63 @@ const signup: FC = () => {
                         </div>
                         <div>
                             <form onSubmit={handleSignUp}>
-                                <div className='my-11 grid'>
-                                    <input className='my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white' type="text" name="studentId" placeholder='Student Id' />
-                                    <input className='my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white' type="text" name="studentName" placeholder='Student Name' />
-                                    <input className='my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white' type="text" name="department" placeholder='Department' />
-                                    <input className='my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white' type="text" name="semester" placeholder='Semester' />
-                                    <input className='my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white' type="text" name="mobile" placeholder='Mobile No' />
-                                    <input className='my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white' type="text" name="mail" placeholder='Student Mail' />
+                                <div className="my-11 grid">
+                                    <input
+                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
+                                        type="text"
+                                        name="studentId"
+                                        placeholder="Student Id"
+                                        value={studentId}
+                                        onChange={(e) => setStudentId(e.target.value)}
+                                    />
+                                    <input
+                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
+                                        type="text"
+                                        name="studentName"
+                                        placeholder="Student Name"
+                                        value={studentName}
+                                        onChange={(e) => setStudentName(e.target.value)}
+                                    />
+                                    <input
+                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
+                                        type="text"
+                                        name="department"
+                                        placeholder="Department"
+                                        value={department}
+                                        onChange={(e) => setDepartment(e.target.value)}
+                                    />
+
+                                    <input
+                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
+                                        type="text"
+                                        name="semester"
+                                        placeholder="Semester"
+                                        value={semester}
+                                        onChange={(e) => setSemester(e.target.value)}
+                                    />
+
+                                    <input
+                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
+                                        type="text"
+                                        name="mobile"
+                                        placeholder="Mobile No"
+                                        value={mobile}
+                                        onChange={(e) => setMobile(e.target.value)}
+                                    />
+
+                                    <input
+                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
+                                        type="text"
+                                        name="mail"
+                                        placeholder="Student Mail"
+                                        value={mail}
+                                        onChange={(e) => setMail(e.target.value)}
+                                    />
+
                                 </div>
                                 <div>
                                     <CommonButton buttonText="Sign Up" />
-                                    <input type="submit" value="Sign Up" />
+                                    {/* <input type="submit" value="Sign Up" /> */}
                                 </div>
                             </form>
                         </div>
