@@ -24,7 +24,7 @@ const Signup: FC = () => {
 
     const pathname = usePathname()
     const pathNameTotalArray = pathname.split("/")
-    const pathNameArray = pathNameTotalArray.filter((path) => path !== "")
+    const pathNameArray = pathNameTotalArray.filter((path) => path !== "").map((name) => name.replace("-", " "));
 
 
 
@@ -55,7 +55,7 @@ const Signup: FC = () => {
                     <CommonHomeButton pathNameArray={pathNameArray} />
 
 
-                    <div className='shadow-2xl dark:border border-black rounded-md max-w-[60rem] items-center mx-auto p-4 md:p-16'>
+                    <div className='shadow-2xl dark:border border-black rounded-md max-w-[60rem] m-4 p-4 md:p-16'>
                         <div>
                             <h1 className='text-center text-2xl dark:text-white font-semibold'>Sign up for seat</h1>
                             <hr className='mt-4 p-[0.05rem] bg-[#22B24C]' />
@@ -108,13 +108,12 @@ const Signup: FC = () => {
 
                                     <input
                                         className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
-                                        type="text"
-                                        name="mail"
+                                        type="email"
+                                        name="email"
                                         placeholder="Student Mail"
                                         value={mail}
                                         onChange={(e) => setMail(e.target.value)}
                                     />
-
                                 </div>
                                 <div>
                                     <CommonButton buttonText="Sign Up" />

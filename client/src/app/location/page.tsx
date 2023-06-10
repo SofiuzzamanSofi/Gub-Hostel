@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image';
 import maps from '@layout/assets/maps.png';
 import { usePathname } from 'next/navigation'

@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
             <HomeImage />
             <Body></Body>
 
-            <CommonButton buttonText="Apply Now" />
+            <CommonButton buttonText="Apply Now" buttonType='Link' buttonGo="sign-in" />
         </div>
     );
 };

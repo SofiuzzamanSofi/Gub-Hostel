@@ -16,8 +16,8 @@ const Header: React.FC = () => {
             <div className="dropdown dropdown-hover">
                 <label tabIndex={0} className="">FACILITIES</label>
                 <ul tabIndex={0} className="dropdown-content menu p-4 shadow bg-base-100 rounded-box mt-44 w-52">
-                    <li className='my-2'><Link href='roomfacilities'>ROOM FACILITIES</Link></li>
-                    <li className='my-2'><Link href='/hallfacilities'>HALL FACILITIES</Link></li>
+                    <li className='my-2'><Link href='room-facilities'>ROOM FACILITIES</Link></li>
+                    <li className='my-2'><Link href='/hall-facilities'>HALL FACILITIES</Link></li>
                 </ul>
             </div>
         </li>
@@ -64,8 +64,8 @@ const Header: React.FC = () => {
                     <div className="dropdown lg:dropdown-hover dropdown-end lg:hidden font-semibold mr-[30px]">
                         <label tabIndex={0} className="hover:text-green-400 font-semibold lg:text-xl ">FACILITIES</label>
                         <ul tabIndex={0} className="dropdown-content menu p-4 shadow bg-base-100 rounded-box w-52">
-                            <li className='my-2 lg:text-xl'><Link href='/roomfacilities'>ROOM FACILITIES</Link></li>
-                            <li className='my-2 lg:text-xl'><Link href='/hallfacilities'>HALL FACILITIES</Link></li>
+                            <li className='my-2 lg:text-xl'><Link href='/room-facilities'>ROOM FACILITIES</Link></li>
+                            <li className='my-2 lg:text-xl'><Link href='/hall-facilities'>HALL FACILITIES</Link></li>
                         </ul>
                     </div>
 
@@ -74,8 +74,8 @@ const Header: React.FC = () => {
                             <span className='bordar p-4 bg-green-500 hover:bg-green-600 rounded-md text-white'>PORTAL</span>
                         </label>
                         <ul tabIndex={0} className="dropdown-content menu p-3 shadow bg-base-100 rounded-box w-52">
-                            <Link href={'/signin'}><li className='my-2 text-center hover:text-green-400'>SIGN IN</li></Link>
-                            <Link href={'/signup'}><li className='my-2 text-center hover:text-green-400'>SIGN UP</li></Link>
+                            <Link href="sign-in"><li className='my-2 text-center hover:text-green-400'>SIGN IN</li></Link>
+                            <Link href="sign-up"><li className='my-2 text-center hover:text-green-400'>SIGN UP</li></Link>
 
                         </ul>
                     </div>

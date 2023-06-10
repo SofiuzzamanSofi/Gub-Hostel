@@ -1,3 +1,5 @@
+"use client"
+
 import { usePathname } from 'next/navigation'
 import { FaGreaterThan } from 'react-icons/fa';
 import HomeImage from '@/workArea/components/Home/HomeImage';

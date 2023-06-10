@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation'
@@ -9,7 +11,7 @@ const RoomFacilities = () => {
 
     const pathname = usePathname()
     const pathNameTotalArray = pathname.split("/")
-    const pathNameArray = pathNameTotalArray.filter((path) => path !== "")
+    const pathNameArray = pathNameTotalArray.filter((path) => path !== "").map((name) => name.replace("-", " "));
 
 
     return (

@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 import { FaGreaterThan } from 'react-icons/fa';
 import Image from 'next/image';
@@ -12,7 +14,7 @@ const HallFacilities = () => {
 
     const pathname = usePathname()
     const pathNameTotalArray = pathname.split("/")
-    const pathNameArray = pathNameTotalArray.filter((path) => path !== "")
+    const pathNameArray = pathNameTotalArray.filter((path) => path !== "").map((name) => name.replace("-", " "));
 
 
 
