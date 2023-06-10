@@ -1,6 +1,6 @@
 #Gub Hostel Management For Green University
 
-• Live Site [https://green-university-a133f.web.app/]
+• Live Site [https://gub-hostel.vercel.app]
 
 • Client Site [--]
 
