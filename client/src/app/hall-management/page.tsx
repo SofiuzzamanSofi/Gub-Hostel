@@ -24,16 +24,6 @@ const hallManageMent: FC = () => {
 
 
 
-    const handleSignUp = (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-
-        console.log("this is console.log");
-        // router.push("/" as string, undefined,  {shallow: true});
-        // router.replace("/")
-        router.push("/verify-email");
-    };
-
-
 
 
     return (
@@ -43,7 +33,7 @@ const hallManageMent: FC = () => {
                 <div className="">
                     <div className="text-center">
                         <h1 className="text-3xl font-bold text-[#35DC66] uppercase">
-                            Sign Up
+                            Hall Management
                         </h1>
                     </div>
 
@@ -52,29 +42,30 @@ const hallManageMent: FC = () => {
 
 
                     <div className='shadow-2xl dark:border border-black rounded-md max-w-[60rem] m-4 p-4 md:p-16'>
-                        <div>
+                        {/* <div>
                             <h1 className='text-center text-2xl dark:text-white font-semibold'>Sign up for seat</h1>
                             <hr className='mt-4 p-[0.05rem] bg-[#22B24C]' />
-                        </div>
+                        </div> */}
                         <div>
-                            <form onSubmit={handleSignUp}>
-                                <div className="my-11 grid">
-                                    <input
-                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
-                                        type="text"
-                                        name="studentId"
-                                        placeholder="Student Id"
-                                        value={studentId}
-                                        onChange={(e) => setStudentId(e.target.value)}
-                                    />
+
+                            <div className="my-11 grid">
+                                {/* <input
+                                    className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
+                                    type="text"
+                                    name="studentId"
+                                    placeholder="Student Id"
+                                    value={studentId}
+                                    onChange={(e) => setStudentId(e.target.value)}
+                                />
 
 
 
 
-                                    <CommonButton buttonText="Sign Up" />
-                                    {/* <input type="submit" value="Sign Up" /> */}
-                                </div>
-                            </form>
+                                <CommonButton buttonText="Sign Up" /> */}
+                                {/* <input type="submit" value="Sign Up" /> */}
+
+                            </div>
+
                         </div>
                     </div>
                 </div>
