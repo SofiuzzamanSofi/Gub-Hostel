@@ -3,15 +3,18 @@
 
 import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
+
 import { FC, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 
 
 
 
-const signup: FC = () => {
+const Signup: FC = () => {
 
 
+    const router = useRouter();
     const [studentId, setStudentId] = useState('');
     const [studentName, setStudentName] = useState('');
     const [department, setDepartment] = useState('');
@@ -24,7 +27,11 @@ const signup: FC = () => {
 
     const handleSignUp = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        // Handle sign up logic here
+
+        console.log("this is console.log");
+        // router.push("/" as string, undefined,  {shallow: true});
+        // router.replace("/")
+        router.push("/");
     };
 
 
@@ -117,4 +124,12 @@ const signup: FC = () => {
     );
 };
 
-export default signup;
+export default Signup;
+
+
+
+
+
+
+
+
