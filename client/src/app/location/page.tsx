@@ -1,16 +1,20 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import maps from '@layout/assets/maps.png';
-import { FaGreaterThan } from 'react-icons/fa';
+import { usePathname } from 'next/navigation'
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
-// import { useNavigation } from 'next/navigation';
+
 
 
 
 
 
 const Location: React.FC = () => {
-    // const navigation = useNavigation();
+
+
+
+    const pathname = usePathname()
+    const pathNameTotalArray = pathname.split("/")
+    const pathNameArray = pathNameTotalArray.filter((path) => path !== "")
 
 
     return (
@@ -24,9 +28,7 @@ const Location: React.FC = () => {
                         </h1>
                     </div>
 
-                    <CommonHomeButton />
-
-
+                    <CommonHomeButton pathNameArray={pathNameArray} />
 
                     <div>
                         <div>

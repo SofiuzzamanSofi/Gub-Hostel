@@ -1,33 +1,20 @@
 import React from 'react';
 import { FaGreaterThan } from 'react-icons/fa';
-import hallFacilitiesImage from '@layout/assets/hallfacilities.jpg'
-import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation'
+import hallFacilitiesImage from '@layout/assets/hallfacilities.jpg'
 import HallFacilitiesDataCart from '@/workArea/components/hallFacilitiesData/hallFacilitiesDataCart';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 
 
 
-
-
-// import { Link, useLocation } from 'react-router-dom';
-
-// import { hallFacilitiesDataTypes } from './../../workArea/types/allCommonTypes';
-// import { hallFacilitiesData } from '@/workArea/components/hallFacilitiesData/hallFacilitiesData';
-
-
-
-
-
-
-
-
-
-
 const HallFacilities = () => {
-    // const location = useLocation()
 
-    // const datas: hallFacilitiesDataTypes[] = hallFacilitiesData;
+    const pathname = usePathname()
+    const pathNameTotalArray = pathname.split("/")
+    const pathNameArray = pathNameTotalArray.filter((path) => path !== "")
+
+
 
     return (
         <div className='my-12'>
@@ -38,8 +25,7 @@ const HallFacilities = () => {
 
 
             <div className="mx-[30px] lg:ml-[96px] lg:mr-[96px]">
-
-                <CommonHomeButton />
+                <CommonHomeButton pathNameArray={pathNameArray} />
             </div>
 
 

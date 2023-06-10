@@ -1,15 +1,19 @@
-import HomeImage from '@/workArea/components/Home/HomeImage';
-import Link from 'next/link';
-import React from 'react';
+"use client"
 
-import { FaGreaterThan } from 'react-icons/fa';
+import React from 'react';
+import { usePathname } from 'next/navigation'
+import HomeImage from '@/workArea/components/Home/HomeImage';
 import CommonButton from './../../workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 
 
+
 const Faq: React.FC = () => {
 
-    // const location = useLocation();
+
+    const pathname = usePathname()
+    const pathNameTotalArray = pathname.split("/")
+    const pathNameArray = pathNameTotalArray.filter((path) => path !== "")
 
     return (
         <div className='my-12'>
@@ -24,7 +28,7 @@ const Faq: React.FC = () => {
                             </h1>
                         </div>
 
-                        <CommonHomeButton />
+                        <CommonHomeButton pathNameArray={pathNameArray} />
 
 
 

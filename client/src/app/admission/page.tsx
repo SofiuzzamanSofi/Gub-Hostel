@@ -1,15 +1,17 @@
-import Link from 'next/link';
+import { usePathname } from 'next/navigation'
 import { FaGreaterThan } from 'react-icons/fa';
 import HomeImage from '@/workArea/components/Home/HomeImage';
-// import { useNavigation } from 'next/navigation';
 import CommonButton from './../../workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 
 
 
-
 const Admission: React.FC = () => {
-    // const navigation = useNavigation();
+
+
+    const pathname = usePathname()
+    const pathNameTotalArray = pathname.split("/")
+    const pathNameArray = pathNameTotalArray.filter((path) => path !== "")
 
 
     return (
@@ -25,7 +27,7 @@ const Admission: React.FC = () => {
                             </h1>
                         </div>
 
-                        <CommonHomeButton />
+                        <CommonHomeButton pathNameArray={pathNameArray} />
 
                         <div className="bg-white dark:bg-slate-700  shadow-md p-5 rounded-md my-5">
                             <h1 className="text-xl font-bold pb-3 text-[#35DC66]">
