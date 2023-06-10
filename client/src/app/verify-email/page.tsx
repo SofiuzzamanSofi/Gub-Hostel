@@ -5,11 +5,11 @@ interface pageProps {
 }
 
 const page: FC<pageProps> = ({ }) => {
-  return <div className='my-12'>
+  return <div className='my-12 min-h-screen mt-[-3.15rem] lg:mt-[-5.25rem] mb-[-7.15rem] flex items-center'>
     {/* <HomeImage /> */}
     <div className="container mx-auto">
       <div className="">
-        <div className="text-center">
+        <div className="text-center mb-6">
           <h1 className='text-center text-2xl dark:text-white font-semibold'>
             Verify Your Email Address
           </h1>
