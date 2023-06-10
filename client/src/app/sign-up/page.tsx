@@ -55,7 +55,7 @@ const Signup: FC = () => {
                     <CommonHomeButton pathNameArray={pathNameArray} />
 
 
-                    <div className='shadow-2xl dark:border border-black rounded-md max-w-[60rem] m-4 p-4 md:p-16'>
+                    <div className='shadow-2xl dark:border border-black rounded-md max-w-[60rem] content-center m-4 md:mx-auto p-4 md:p-16'>
                         <div>
                             <h1 className='text-center text-2xl dark:text-white font-semibold'>Sign up for seat</h1>
                             <hr className='mt-4 p-[0.05rem] bg-[#22B24C]' />

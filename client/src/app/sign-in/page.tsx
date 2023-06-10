@@ -50,7 +50,7 @@ const SignIn: FC = () => {
                     <CommonHomeButton pathNameArray={pathNameArray} />
 
 
-                    <div className='shadow-2xl dark:border border-black rounded-md max-w-[60rem] m-4 p-4 md:p-16'>
+                    <div className='shadow-2xl dark:border border-black rounded-md max-w-[60rem] md:mx-auto p-4 md:p-16'>
                         <div>
                             <h1 className='text-center text-2xl dark:text-white font-semibold'>Student Portal Sign In</h1>
                             <hr className='mt-4 p-[0.05rem] bg-[#22B24C]' />

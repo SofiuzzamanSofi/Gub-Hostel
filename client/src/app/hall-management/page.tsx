@@ -1,11 +1,14 @@
 "use client"
 
+import Link from 'next/link';
 import { FC, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation'
-import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
-
+import { FaHandPointUp, FaRecycle } from 'react-icons/fa';
+import { AiFillFile, AiFillHome } from 'react-icons/ai';
+import { MdNotificationsActive, MdOutlineCancel } from 'react-icons/md';
+import { BsFillInfoSquareFill, BsFillPersonFill } from 'react-icons/bs';
 
 
 
@@ -15,7 +18,6 @@ const hallManageMent: FC = () => {
 
 
     const router = useRouter();
-    const [studentId, setStudentId] = useState('');
 
 
     const pathname = usePathname()
@@ -41,30 +43,42 @@ const hallManageMent: FC = () => {
                     <CommonHomeButton pathNameArray={pathNameArray} />
 
 
-                    <div className='shadow-2xl dark:border border-black rounded-md max-w-[60rem] m-4 p-4 md:p-16'>
-                        {/* <div>
-                            <h1 className='text-center text-2xl dark:text-white font-semibold'>Sign up for seat</h1>
-                            <hr className='mt-4 p-[0.05rem] bg-[#22B24C]' />
-                        </div> */}
-                        <div>
+                    <div className='shadow-2xl dark:border border-black rounded-md max-w-[60rem] m-4  md:mx-auto p-4 md:p-16'>
 
-                            <div className="my-11 grid">
-                                {/* <input
-                                    className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
-                                    type="text"
-                                    name="studentId"
-                                    placeholder="Student Id"
-                                    value={studentId}
-                                    onChange={(e) => setStudentId(e.target.value)}
-                                />
+                        <div className="my-11 grid gap-16 justify-center sm:flex sm:flex-wrap sm:justify-between">
 
-
-
-
-                                <CommonButton buttonText="Sign Up" /> */}
-                                {/* <input type="submit" value="Sign Up" /> */}
-
-                            </div>
+                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105">
+                                <FaHandPointUp className='w-14 h-16' />
+                                <p>Seat Booking</p>
+                            </Link>
+                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105">
+                                <FaRecycle className='w-14 h-16' />
+                                <p>Seat Renew</p>
+                            </Link>
+                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105">
+                                <MdOutlineCancel className='w-14 h-16' />
+                                <p>Seat Cancel</p>
+                            </Link>
+                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105">
+                                <BsFillPersonFill className='w-14 h-16' />
+                                <p>Personal Info</p>
+                            </Link>
+                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105">
+                                <AiFillFile className='w-14 h-16' />
+                                <p>File a Complain</p>
+                            </Link>
+                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105">
+                                <AiFillHome className='w-14 h-16' />
+                                <p>Room Sharing</p>
+                            </Link>
+                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105">
+                                <BsFillInfoSquareFill className='w-14 h-16' />
+                                <p>Bill Information</p>
+                            </Link>
+                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105">
+                                <MdNotificationsActive className='w-14 h-16' />
+                                <p>Change Room</p>
+                            </Link>
 
                         </div>
                     </div>
