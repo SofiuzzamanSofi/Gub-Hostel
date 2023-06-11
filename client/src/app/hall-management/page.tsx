@@ -76,7 +76,7 @@ const hallManageMent: FC = () => {
                                 <AiFillHome className='w-14 h-16' />
                                 <p>Room Sharing</p>
                             </Link>
-                            <Link href="/hall-management/change-room" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                            <Link href="/hall-management/bill-information" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                 <BsFillInfoSquareFill className='w-14 h-16' />
                                 <p>Bill Information</p>
                             </Link>

@@ -48,7 +48,7 @@ const BillInformation: FC = () => {
                 <div className="">
                     <div className="text-center">
                         <h1 className="text-3xl font-bold text-[#35DC66] uppercase">
-                            File A Complain
+                           Bill Information
                         </h1>
                     </div>
 
