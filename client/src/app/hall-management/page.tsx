@@ -63,11 +63,12 @@ const hallManageMent: FC = () => {
                                 <MdOutlineCancel className='w-14 h-16' />
                                 <p>Seat Cancel</p>
                             </Link>
+
                             <Link href="/hall-management/change-room" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                 <BsFillPersonFill className='w-14 h-16' />
                                 <p>Personal Info</p>
                             </Link>
-                            <Link href="/hall-management/change-room" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                            <Link href="/hall-management/complain" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                 <AiFillFile className='w-14 h-16' />
                                 <p>File a Complain</p>
                             </Link>
