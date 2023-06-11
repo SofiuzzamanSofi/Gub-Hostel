@@ -48,7 +48,7 @@ const BillInformation: FC = () => {
                 <div className="">
                     <div className="text-center">
                         <h1 className="text-3xl font-bold text-[#35DC66] uppercase">
-                           Bill Information
+                            Bill Information
                         </h1>
                     </div>
 
@@ -60,52 +60,70 @@ const BillInformation: FC = () => {
 
                         <div>
 
-                            <form
-                                onSubmit={handleSeatBooking}
-                            >
-                                <div className="my-11 grid gap-4">
 
-                                    <div
-                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white cursor-pointer flex justify-between"
-                                    >
-                                        <p>Complain About Food</p>
-                                        <input type="checkbox" name="" id="" />
-                                    </div>
-                                    <div
-                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white cursor-pointer flex justify-between"
-                                    >
-                                        <p>Complain About Environment</p>
-                                        <input type="checkbox" name="" id="" />
-                                    </div>
-                                    <div
-                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white cursor-pointer flex justify-between"
-                                    >
-                                        <p>Complain About Management</p>
-                                        <input type="checkbox" name="" id="" />
-                                    </div>
-                                    <div
-                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white cursor-pointer flex justify-between"
-                                    >
-                                        <p>Complain About Service</p>
-                                        <input type="checkbox" name="" id="" />
-                                    </div>
-                                    <div
-                                        className="my-4 rounded-md  dark:text-white grid gap-2"
-                                    >
-                                        <label htmlFor="others">Others:</label>
-                                        <textarea name="others" id="others" className="p-4 rounded-md min-h-[10rem] bg-[#CDCDCD] dark:bg-gray-700">
-
-                                        </textarea>
-                                    </div>
-
-                                </div>
-
-                                <div>
-                                    <CommonButton buttonText="Submit" />
-                                    {/* <input type="submit" value="Sign Up" /> */}
-                                </div>
-                            </form>
-
+                            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 gap-2">
+                                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                        <tr>
+                                            <th scope="col" className="p-6">
+                                                No
+                                            </th>
+                                            <th scope="col" className="p-6">
+                                                Fee Type
+                                            </th>
+                                            <th scope="col" className="p-6">
+                                                Amount
+                                            </th>
+                                            <th scope="col" className="p-6">
+                                                Discount
+                                            </th>
+                                            <th scope="col" className="p-6">
+                                                Payment
+                                            </th>
+                                            <th scope="col" className="p-6">
+                                                Payable
+                                            </th>
+                                            <th scope="col" className="p-6">
+                                                Late Fee
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            [...Array(10)?.keys()].map((tableRow: number, index: number) => (
+                                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                        1
+                                                    </th>
+                                                    <td className="px-6 py-4">
+                                                        Hostel Fee
+                                                    </td>
+                                                    <td className="px-6 py-4">
+                                                        <span>15000</span>
+                                                        <span>Tk</span>
+                                                    </td>
+                                                    <td className="px-6 py-4">
+                                                        <span>500</span>
+                                                        <span>Tk</span>
+                                                    </td>
+                                                    <td className="px-6 py-4">
+                                                        <span>7500</span>
+                                                        <span>Tk</span>
+                                                    </td>
+                                                    <td className="px-6 py-4">
+                                                        <span>7500</span>
+                                                        <span>Tk</span>
+                                                    </td>
+                                                    <td className="px-6 py-4">
+                                                        <span>00</span>
+                                                        <span>Tk</span>
+                                                    </td>
+                                                </tr>
+                                            ))
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
