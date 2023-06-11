@@ -61,7 +61,7 @@ const hallManageMent: FC = () => {
                             <form
                                 onSubmit={handleSeatBooking}
                             >
-                                <div className="my-11 grid gap-12 justify-center sm:flex sm:flex-wrap sm:justify-between">
+                                <div className="my-11 grid gap-12 justify-center sm:grid-cols-2 lg:grid-cols-3">
 
                                     <input
                                         className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white text-center"
@@ -105,7 +105,7 @@ const hallManageMent: FC = () => {
                                     >
                                         <label htmlFor="studentType">Student Type <span className="text-red-500">*</span> </label>
                                         <select name="studentType" id="studentType" className="bg-[#CDCDCD] dark:bg-gray-700 text-center">
-                                            <option disabled selected value="">Chose One</option>
+                                            <option disabled value="">Chose One</option>
                                             <option value="regular">Regular</option>
                                             <option value="irRegular">Ir Regular</option>
                                         </select>
@@ -116,7 +116,7 @@ const hallManageMent: FC = () => {
                                     >
                                         <label htmlFor="semesterType">Semester<span className="text-red-500">*</span> </label>
                                         <select name="semesterType" id="semesterType" className="bg-[#CDCDCD] dark:bg-gray-700 text-center">
-                                            <option disabled selected value="">Chose One</option>
+                                            <option disabled value="">Chose One</option>
                                             <option value="first">First</option>
                                             <option value="second">Second</option>
                                             <option value="Third">Third</option>
@@ -133,7 +133,7 @@ const hallManageMent: FC = () => {
                                     >
                                         <label htmlFor="semesterYear">Semester Year<span className="text-red-500">*</span> </label>
                                         <select name="semesterYear" id="semesterYear" className="bg-[#CDCDCD] dark:bg-gray-700 text-center">
-                                            <option disabled selected value="">Chose One</option>
+                                            <option disabled value="">Chose One</option>
                                             <option value="2019">2019</option>
                                             <option value="2020">2020</option>
                                             <option value="2021">2021</option>
@@ -145,12 +145,10 @@ const hallManageMent: FC = () => {
                                         </select>
                                     </div>
 
-                                    <div
-                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white text-center"
-                                    >
+                                    <div className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white text-center">
                                         <label htmlFor="hall">Hall<span className="text-red-500">*</span> </label>
                                         <select name="hall" id="hall" className="bg-[#CDCDCD] dark:bg-gray-700 text-center">
-                                            <option disabled selected value="">Chose One</option>
+                                            <option disabled value="">Choose One</option>
                                             <option value="Shahid Jiya Hall">Shahid Jiya Hall</option>
                                             <option value="Mawlana Vasani Hall">Mawlana Vasani Hall</option>
                                             <option value="Shere E Bangla Hall">Shere E Bangla Hall</option>
@@ -162,12 +160,13 @@ const hallManageMent: FC = () => {
                                         </select>
                                     </div>
 
+
                                     <div
                                         className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white text-center"
                                     >
                                         <label htmlFor="level">Level<span className="text-red-500">*</span> </label>
                                         <select name="level" id="level" className="bg-[#CDCDCD] dark:bg-gray-700 text-center">
-                                            <option disabled selected value="">Chose One</option>
+                                            <option disabled value="">Chose One</option>
                                             <option value="first">First</option>
                                             <option value="second">Second</option>
                                             <option value="Third">Third</option>
@@ -185,7 +184,7 @@ const hallManageMent: FC = () => {
                                     >
                                         <label htmlFor="room">Room<span className="text-red-500">*</span> </label>
                                         <select name="room" id="room" className="bg-[#CDCDCD] dark:bg-gray-700 text-center">
-                                            <option disabled selected value="">Chose One</option>
+                                            <option disabled value="">Chose One</option>
                                             <option value="101">101</option>
                                             <option value="102">102</option>
                                             <option value="103">103</option>
