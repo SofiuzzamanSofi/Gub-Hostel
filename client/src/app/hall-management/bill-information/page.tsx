@@ -13,7 +13,7 @@ import { toast } from "react-hot-toast";
 
 
 
-const Complain: FC = () => {
+const BillInformation: FC = () => {
 
 
     const router = useRouter();
@@ -114,7 +114,7 @@ const Complain: FC = () => {
     );
 };
 
-export default Complain;
+export default BillInformation;
 
 
 
