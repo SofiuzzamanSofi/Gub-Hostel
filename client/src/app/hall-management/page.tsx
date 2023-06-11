@@ -51,35 +51,35 @@ const hallManageMent: FC = () => {
                                 <AiFillInfoCircle className='w-14 h-16' />
                                 <p>Student Info</p>
                             </Link> */}
-                            <Link href="hall-management/seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                            <Link href="/hall-management/seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                 <FaHandPointUp className='w-14 h-16' />
                                 <p>Seat Booking</p>
                             </Link>
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                            <Link href="/hall-management/seat-renewal" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                 <FaRecycle className='w-14 h-16' />
                                 <p>Seat Renew</p>
                             </Link>
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                            <Link href="/hall-management/seat-cancelletion" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                 <MdOutlineCancel className='w-14 h-16' />
                                 <p>Seat Cancel</p>
                             </Link>
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                            <Link href="/hall-management/change-room" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                 <BsFillPersonFill className='w-14 h-16' />
                                 <p>Personal Info</p>
                             </Link>
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                            <Link href="/hall-management/change-room" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                 <AiFillFile className='w-14 h-16' />
                                 <p>File a Complain</p>
                             </Link>
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                            <Link href="/hall-management/change-room" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                 <AiFillHome className='w-14 h-16' />
                                 <p>Room Sharing</p>
                             </Link>
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                            <Link href="/hall-management/change-room" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                 <BsFillInfoSquareFill className='w-14 h-16' />
                                 <p>Bill Information</p>
                             </Link>
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                            <Link href="/hall-management/change-room" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                 <MdNotificationsActive className='w-14 h-16' />
                                 <p>Change Room</p>
                             </Link>

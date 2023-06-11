@@ -13,7 +13,7 @@ import { toast } from "react-hot-toast";
 
 
 
-const SeatBooking: FC = () => {
+const ChangeRoom: FC = () => {
 
 
     const router = useRouter();
@@ -48,7 +48,7 @@ const SeatBooking: FC = () => {
                 <div className="">
                     <div className="text-center">
                         <h1 className="text-3xl font-bold text-[#35DC66] uppercase">
-                            Seat Booking Form
+                            Seat/Room Change Form
                         </h1>
                     </div>
 
@@ -64,7 +64,7 @@ const SeatBooking: FC = () => {
                                 onSubmit={handleSeatBooking}
                             >
                                 <div className="my-11 grid gap-12 justify-center sm:grid-cols-2 xl:grid-cols-3">
-
+{/* 
                                     <input
                                         className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white text-center"
                                         type="text"
@@ -99,7 +99,7 @@ const SeatBooking: FC = () => {
                                         placeholder="Student ID"
                                         value={studentId}
                                         onChange={(e) => setStudentId(e.target.value)}
-                                    />
+                                    /> */}
 
 
                                     <div
@@ -221,7 +221,7 @@ const SeatBooking: FC = () => {
                                     <p className="text-sm">Star(*) Marked are mandatory fields.</p>
                                 </div>
                                 <div>
-                                    <CommonButton buttonText="Submit" />
+                                    <CommonButton buttonText="Submit Change Room Form" />
                                     {/* <input type="submit" value="Sign Up" /> */}
                                 </div>
                             </form>
@@ -234,7 +234,7 @@ const SeatBooking: FC = () => {
     );
 };
 
-export default SeatBooking;
+export default ChangeRoom    ;
 
 
 

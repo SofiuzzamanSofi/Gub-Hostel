@@ -13,7 +13,7 @@ import { toast } from "react-hot-toast";
 
 
 
-const SeatBooking: FC = () => {
+const SeatRenewal: FC = () => {
 
 
     const router = useRouter();
@@ -48,7 +48,7 @@ const SeatBooking: FC = () => {
                 <div className="">
                     <div className="text-center">
                         <h1 className="text-3xl font-bold text-[#35DC66] uppercase">
-                            Seat Booking Form
+                            Seat Renewal Form
                         </h1>
                     </div>
 
@@ -221,7 +221,7 @@ const SeatBooking: FC = () => {
                                     <p className="text-sm">Star(*) Marked are mandatory fields.</p>
                                 </div>
                                 <div>
-                                    <CommonButton buttonText="Submit" />
+                                    <CommonButton buttonText="Renew" />
                                     {/* <input type="submit" value="Sign Up" /> */}
                                 </div>
                             </form>
@@ -234,7 +234,7 @@ const SeatBooking: FC = () => {
     );
 };
 
-export default SeatBooking;
+export default SeatRenewal;
 
 
 

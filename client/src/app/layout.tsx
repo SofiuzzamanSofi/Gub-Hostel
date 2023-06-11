@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { Toaster } from 'react-hot-toast';
 
 import Footer from '@/workArea/components/Footer/Footer';
 import Header from '@/workArea/components/Header/Header';
@@ -24,6 +25,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <Toaster />
         </>
       </body>
     </html>
