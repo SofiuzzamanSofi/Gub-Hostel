@@ -1,14 +1,12 @@
 "use client"
 
+import React from "react"
 import Link from 'next/link';
 import { FC, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation'
+import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
-import { FaHandPointUp, FaRecycle } from 'react-icons/fa';
-import { AiFillFile, AiFillHome, AiFillInfoCircle } from 'react-icons/ai';
-import { MdNotificationsActive, MdOutlineCancel } from 'react-icons/md';
-import { BsFillInfoSquareFill, BsFillPersonFill } from 'react-icons/bs';
 
 
 
@@ -18,13 +16,26 @@ const hallManageMent: FC = () => {
 
 
     const router = useRouter();
+    const [studentId, setStudentId] = useState('');
+    const [studentName, setStudentName] = useState('');
+    const [department, setDepartment] = useState('');
+    const [semester, setSemester] = useState('');
+    const [mobile, setMobile] = useState('');
+    const [mail, setMail] = useState('');
 
 
     const pathname = usePathname()
     const pathNameTotalArray = pathname.split("/")
     const pathNameArray = pathNameTotalArray.filter((path) => path !== "").map((name) => name.replace("-", " "));
 
+    const handleSeatBooking = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
 
+        console.log("this is console.log");
+        // router.push("/" as string, undefined,  {shallow: true});
+        // router.replace("/")
+        router.push("/faq");
+    };
 
 
 
@@ -47,48 +58,80 @@ const hallManageMent: FC = () => {
 
                         <div className="my-11 grid gap-16 justify-center sm:flex sm:flex-wrap sm:justify-between">
 
-                            {/* <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
-                                <AiFillInfoCircle className='w-14 h-16' />
-                                <p>Student Info</p>
-                            </Link> */}
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
-                                <FaHandPointUp className='w-14 h-16' />
-                                <p>Seat Booking</p>
-                            </Link>
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
-                                <FaRecycle className='w-14 h-16' />
-                                <p>Seat Renew</p>
-                            </Link>
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
-                                <MdOutlineCancel className='w-14 h-16' />
-                                <p>Seat Cancel</p>
-                            </Link>
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
-                                <BsFillPersonFill className='w-14 h-16' />
-                                <p>Personal Info</p>
-                            </Link>
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
-                                <AiFillFile className='w-14 h-16' />
-                                <p>File a Complain</p>
-                            </Link>
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
-                                <AiFillHome className='w-14 h-16' />
-                                <p>Room Sharing</p>
-                            </Link>
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
-                                <BsFillInfoSquareFill className='w-14 h-16' />
-                                <p>Bill Information</p>
-                            </Link>
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
-                                <MdNotificationsActive className='w-14 h-16' />
-                                <p>Change Room</p>
-                            </Link>
+                            <form onSubmit={handleSeatBooking}>
+                                <div className=" grid">
+
+                                    <input
+                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
+                                        type="text"
+                                        name="studentName"
+                                        placeholder="Student Name"
+                                        value={studentName}
+                                        onChange={(e) => setStudentName(e.target.value)}
+                                    />
+
+                                    <input
+                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
+                                        type="email"
+                                        name="email"
+                                        placeholder="Eail"
+                                        value={mail}
+                                        onChange={(e) => setMail(e.target.value)}
+                                    />
+
+                                    <input
+                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
+                                        type="text"
+                                        name="mobile"
+                                        placeholder="Mobile No"
+                                        value={mobile}
+                                        onChange={(e) => setMobile(e.target.value)}
+                                    />
+
+                                    <input
+                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
+                                        type="text"
+                                        name="studentId"
+                                        placeholder="Student ID"
+                                        value={studentId}
+                                        onChange={(e) => setStudentId(e.target.value)}
+                                    />
+
+
+                                    <div
+                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
+                                    >
+                                        <label htmlFor="semesterType">Semester Type <span className="text-red-500">*</span> </label>
+                                        <select name="semesterType" id="semesterType" className="border border-red">
+                                            <option value="First">First</option>
+                                        </select>
+                                    </div>
+
+
+                                    <input
+                                        className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
+                                        type="text"
+                                        name="semester"
+                                        placeholder="Semester"
+                                        value={semester}
+                                        onChange={(e) => setSemester(e.target.value)}
+                                    />
+
+
+
+
+                                </div>
+                                <div>
+                                    <CommonButton buttonText="Sign Up" />
+                                    {/* <input type="submit" value="Sign Up" /> */}
+                                </div>
+                            </form>
 
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 

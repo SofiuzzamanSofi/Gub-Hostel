@@ -67,7 +67,7 @@ const Signup: FC = () => {
                                         className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
                                         type="text"
                                         name="studentId"
-                                        placeholder="Student Id"
+                                        placeholder="Student ID"
                                         value={studentId}
                                         onChange={(e) => setStudentId(e.target.value)}
                                     />

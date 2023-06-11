@@ -51,7 +51,7 @@ const hallManageMent: FC = () => {
                                 <AiFillInfoCircle className='w-14 h-16' />
                                 <p>Student Info</p>
                             </Link> */}
-                            <Link href="seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                            <Link href="hall-management/seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                 <FaHandPointUp className='w-14 h-16' />
                                 <p>Seat Booking</p>
                             </Link>
