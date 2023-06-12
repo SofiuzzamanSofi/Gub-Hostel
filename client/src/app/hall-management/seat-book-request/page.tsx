@@ -13,7 +13,7 @@ import { AiOutlineSearch, AiOutlineCloseCircle, AiOutlineCheckCircle, AiOutlineC
 
 
 
-const ChangeRoomRequest: FC = () => {
+const SeatBookRequest: FC = () => {
 
 
     const router = useRouter();
@@ -48,7 +48,7 @@ const ChangeRoomRequest: FC = () => {
                 <div className="">
                     <div className="text-center">
                         <h1 className="text-3xl font-bold text-[#35DC66] uppercase">
-                            Change Room Request
+                            Seat Book Request
                         </h1>
                     </div>
 
@@ -93,7 +93,7 @@ const ChangeRoomRequest: FC = () => {
                                                 Department
                                             </th>
                                             <th scope="col" className="p-6">
-                                                Change From - to
+                                                Hall/Level/Room
                                             </th>
                                             <th scope="col" className="p-6">
                                                 Action
@@ -130,8 +130,6 @@ const ChangeRoomRequest: FC = () => {
                                                     </td>
                                                     <td className="px-6 py-4">
                                                         <p>Hall 01/Level/07/E107</p>
-                                                        <p>---</p>
-                                                        <p>Hall 04/Level/05/E106</p>
                                                     </td>
                                                     <td className="px-6 py-4">
                                                         {/* <button className="bg-green-600 text-white rounded-lg px-2 py-1 cursor-no-drop">Accept</button>
@@ -153,7 +151,7 @@ const ChangeRoomRequest: FC = () => {
     );
 };
 
-export default ChangeRoomRequest;
+export default SeatBookRequest;
 
 
 
