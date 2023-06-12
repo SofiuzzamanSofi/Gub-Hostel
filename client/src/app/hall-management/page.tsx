@@ -5,11 +5,12 @@ import { FC, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation'
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
-import { FaHandPointUp, FaRecycle } from 'react-icons/fa';
+import { FaHandPointUp, FaRecycle, FaQuestionCircle } from 'react-icons/fa';
 import { AiFillFile, AiFillHome, AiFillInfoCircle, AiOutlineUnorderedList } from 'react-icons/ai';
 import { MdNotificationsActive, MdOutlineCancel, MdFreeCancellation } from 'react-icons/md';
 import { BsFillInfoSquareFill, BsFillPersonFill } from 'react-icons/bs';
 import { GrFolderCycle } from 'react-icons/gr';
+import { GoGitCompare, GoGitPullRequest } from 'react-icons/go';
 
 
 
@@ -65,6 +66,18 @@ const hallManageMent: FC = () => {
                                 <Link href="/hall-management/renewal-list" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                     <GrFolderCycle className='w-14 h-16 bg-white' />
                                     <p>Renewal List</p>
+                                </Link>
+                                <Link href="/hall-management/complain-list" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                                    <FaQuestionCircle className='w-14 h-16' />
+                                    <p>Complain List</p>
+                                </Link>
+                                <Link href="/hall-management/complain-list" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                                    <GoGitCompare className='w-14 h-16' />
+                                    <p>Complain List</p>
+                                </Link>
+                                <Link href="/hall-management/complain-list" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                                    <GoGitPullRequest className='w-14 h-16' />
+                                    <p>Complain List</p>
                                 </Link>
                             </>
 
