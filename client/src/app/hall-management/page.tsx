@@ -16,7 +16,7 @@ import { AiFillFile, AiFillHome, AiFillInfoCircle, AiOutlineUnorderedList } from
 
 
 
-const hallManageMent: FC = () => {
+const HallManagement: FC = () => {
 
 
     const pathname = usePathname()
@@ -116,4 +116,4 @@ const hallManageMent: FC = () => {
     );
 };
 
-export default hallManageMent;
+export default HallManagement;
