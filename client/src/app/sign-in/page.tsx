@@ -83,7 +83,7 @@ const SignIn: FC = () => {
                                 </div>
                             </form>
                             < div className="text-center mx-auto hover:text-red-500 text-xs mt-4 underline">
-                                <Link href="" className="cursor-not-allowed disabled:">
+                                <Link href="/" className="cursor-not-allowed disabled:">
                                     Forget Password
                                 </Link>
                             </div>
