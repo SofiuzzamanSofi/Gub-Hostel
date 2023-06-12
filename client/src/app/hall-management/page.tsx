@@ -117,11 +117,3 @@ const hallManageMent: FC = () => {
 };
 
 export default hallManageMent;
-
-
-
-
-
-
-
-
