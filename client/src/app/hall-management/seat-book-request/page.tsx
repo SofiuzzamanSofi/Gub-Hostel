@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { FC, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation'
-import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 import { toast } from "react-hot-toast";
 import { AiOutlineSearch, AiOutlineCloseCircle, AiOutlineCheckCircle, AiOutlineCheck } from 'react-icons/ai';
