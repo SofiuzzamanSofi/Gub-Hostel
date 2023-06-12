@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation'
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 import { FaHandPointUp, FaRecycle } from 'react-icons/fa';
-import { AiFillFile, AiFillHome, AiFillInfoCircle } from 'react-icons/ai';
+import { AiFillFile, AiFillHome, AiFillInfoCircle, AiOutlineUnorderedList } from 'react-icons/ai';
 import { MdNotificationsActive, MdOutlineCancel, MdFreeCancellation } from 'react-icons/md';
 import { BsFillInfoSquareFill, BsFillPersonFill } from 'react-icons/bs';
 import { GrFolderCycle } from 'react-icons/gr';
@@ -50,9 +50,13 @@ const hallManageMent: FC = () => {
 
 
                             <>
-                                <Link href="/hall-management/seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                                <Link href="/hall-management/student-info" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                     <AiFillInfoCircle className='w-14 h-16' />
                                     <p>Student Info</p>
+                                </Link>
+                                <Link href="/hall-management/student-bill-info" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                                    <AiOutlineUnorderedList className='w-14 h-16' />
+                                    <p>Student Bill Info</p>
                                 </Link>
                                 <Link href="/hall-management/cancellation-list" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                     <MdFreeCancellation className='w-14 h-16' />

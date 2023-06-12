@@ -8,12 +8,12 @@ import { usePathname } from 'next/navigation'
 import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 import { toast } from "react-hot-toast";
+import { AiOutlineSearch } from 'react-icons/ai';
 
 
 
 
-
-const BillInformation: FC = () => {
+const StudentBillInfo: FC = () => {
 
 
     const router = useRouter();
@@ -48,12 +48,17 @@ const BillInformation: FC = () => {
                 <div className="">
                     <div className="text-center">
                         <h1 className="text-3xl font-bold text-[#35DC66] uppercase">
-                            Bill Information
+                            Student  Bill Information
                         </h1>
                     </div>
 
 
                     <CommonHomeButton pathNameArray={pathNameArray} />
+                    <div className="flex justify-center items-center gap-1">
+                        <AiOutlineSearch className='w-6 ' />
+                        <input type="text" className='p-1 pl-2 rounded-md dark:text-white' />
+                        <button className="bg-green-600 text-white rounded-lg px-2 py-1 cursor-no-drop">Search</button>
+                    </div>
 
 
                     <div className='shadow-2xl dark:border border-black rounded-md max-w-[60rem] m-4 md:mx-auto p-4 md:p-16'>
@@ -62,6 +67,7 @@ const BillInformation: FC = () => {
 
 
                             <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+
                                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 gap-2">
                                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                         <tr>
@@ -69,28 +75,28 @@ const BillInformation: FC = () => {
                                                 No
                                             </th>
                                             <th scope="col" className="p-6">
-                                                Fee Type
+                                                Student Id
                                             </th>
                                             <th scope="col" className="p-6">
-                                                Amount
+                                                Semester
                                             </th>
                                             <th scope="col" className="p-6">
-                                                Discount
+                                                Hall
                                             </th>
                                             <th scope="col" className="p-6">
-                                                Payment
+                                                Level
                                             </th>
                                             <th scope="col" className="p-6">
-                                                Payable
+                                                Room
                                             </th>
                                             <th scope="col" className="p-6">
-                                                Late Fee
+                                                Action
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {
-                                            [...Array(10)?.keys()].map((tableRow: number, index: number) => (
+                                            [...Array(6)?.keys()].map((tableRow: number, index: number) => (
                                                 <tr
                                                     key={index}
                                                     className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -98,27 +104,26 @@ const BillInformation: FC = () => {
                                                         1
                                                     </th>
                                                     <td className="px-6 py-4">
-                                                        Hostel Fee
+                                                        AVTR-01234
                                                     </td>
                                                     <td className="px-6 py-4">
-                                                        <span>15000</span>
-                                                        <span>Tk</span>
+                                                        <span>Spring-</span>
+                                                        <span>2021</span>
                                                     </td>
                                                     <td className="px-6 py-4">
-                                                        <span>500</span>
-                                                        <span>Tk</span>
+                                                        <span>Hall-</span>
+                                                        <span>1</span>
                                                     </td>
                                                     <td className="px-6 py-4">
-                                                        <span>7500</span>
-                                                        <span>Tk</span>
+                                                        <span>Level-</span>
+                                                        <span>7</span>
                                                     </td>
                                                     <td className="px-6 py-4">
-                                                        <span>7500</span>
-                                                        <span>Tk</span>
+                                                        <span>E-</span>
+                                                        <span>707</span>
                                                     </td>
                                                     <td className="px-6 py-4">
-                                                        <span>00</span>
-                                                        <span>Tk</span>
+                                                        <button className="bg-green-600 text-white rounded-lg px-2 py-1 cursor-no-drop">Remark</button>
                                                     </td>
                                                 </tr>
                                             ))
@@ -134,7 +139,7 @@ const BillInformation: FC = () => {
     );
 };
 
-export default BillInformation;
+export default StudentBillInfo;
 
 
 
