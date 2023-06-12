@@ -9,6 +9,7 @@ import { FaHandPointUp, FaRecycle } from 'react-icons/fa';
 import { AiFillFile, AiFillHome, AiFillInfoCircle } from 'react-icons/ai';
 import { MdNotificationsActive, MdOutlineCancel, MdFreeCancellation } from 'react-icons/md';
 import { BsFillInfoSquareFill, BsFillPersonFill } from 'react-icons/bs';
+import { GrFolderCycle } from 'react-icons/gr';
 
 
 
@@ -56,6 +57,10 @@ const hallManageMent: FC = () => {
                                 <Link href="/hall-management/cancellation-list" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                     <MdFreeCancellation className='w-14 h-16' />
                                     <p>Cancellation List</p>
+                                </Link>
+                                <Link href="/hall-management/renewal-list" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                                    <GrFolderCycle className='w-14 h-16 bg-white' />
+                                    <p>Renewal List</p>
                                 </Link>
                             </>
 
