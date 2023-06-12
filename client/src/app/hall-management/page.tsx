@@ -71,9 +71,9 @@ const hallManageMent: FC = () => {
                                     <FaQuestionCircle className='w-14 h-16' />
                                     <p>Complain List</p>
                                 </Link>
-                                <Link href="/hall-management/complain-list" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                                <Link href="/hall-management/change-room-request" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                     <GoGitCompare className='w-14 h-16' />
-                                    <p>Complain List</p>
+                                    <p>Change Room Request</p>
                                 </Link>
                                 <Link href="/hall-management/complain-list" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                     <GoGitPullRequest className='w-14 h-16' />

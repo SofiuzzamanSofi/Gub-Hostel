@@ -8,12 +8,12 @@ import { usePathname } from 'next/navigation'
 import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 import { toast } from "react-hot-toast";
-import { AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineSearch, AiOutlineCloseCircle, AiOutlineCheckCircle, AiOutlineCheck } from 'react-icons/ai';
 
 
 
 
-const StudentBillInfo: FC = () => {
+const ChangeRoomRequest: FC = () => {
 
 
     const router = useRouter();
@@ -57,11 +57,11 @@ const StudentBillInfo: FC = () => {
                     <div className="flex justify-center items-center gap-1">
                         <AiOutlineSearch className='w-6 ' />
                         <input type="text" className='p-1 pl-2 rounded-md dark:text-white' />
-                        <button className="bg-green-600 text-white rounded-lg px-2 py-1 cursor-no-drop">Search</button>
+                        <button className="bg-green-600 text-white rounded-md px-2 py-1 cursor-no-drop">Search</button>
                     </div>
 
 
-                    <div className='shadow-2xl dark:border border-black rounded-md max-w-[60rem] m-4 md:mx-auto p-4 md:p-16'>
+                    <div className='shadow-2xl dark:border border-black rounded-md max-w-[60rem] lg:max-w-full m-4 md:mx-auto p-4 md:p-16'>
 
                         <div>
 
@@ -75,19 +75,25 @@ const StudentBillInfo: FC = () => {
                                                 No
                                             </th>
                                             <th scope="col" className="p-6">
-                                                Student Id
+                                                Name
+                                            </th>
+                                            <th scope="col" className="p-6">
+                                                Email
+                                            </th>
+                                            <th scope="col" className="p-6">
+                                                Phone
+                                            </th>
+                                            <th scope="col" className="p-6">
+                                                Student ID
                                             </th>
                                             <th scope="col" className="p-6">
                                                 Semester
                                             </th>
                                             <th scope="col" className="p-6">
-                                                Hall
+                                                Department
                                             </th>
                                             <th scope="col" className="p-6">
-                                                Level
-                                            </th>
-                                            <th scope="col" className="p-6">
-                                                Room
+                                                Change From - to
                                             </th>
                                             <th scope="col" className="p-6">
                                                 Action
@@ -104,26 +110,34 @@ const StudentBillInfo: FC = () => {
                                                         1
                                                     </th>
                                                     <td className="px-6 py-4">
-                                                        AVTR-01234
+                                                        Rasheq Mohammad Shevik
                                                     </td>
                                                     <td className="px-6 py-4">
-                                                        <span>Spring-</span>
-                                                        <span>2021</span>
+                                                        sheviqhaque113@gmail.com
                                                     </td>
                                                     <td className="px-6 py-4">
-                                                        <span>Hall-</span>
-                                                        <span>1</span>
+                                                        AOXS-1971
                                                     </td>
                                                     <td className="px-6 py-4">
-                                                        <span>Level-</span>
-                                                        <span>7</span>
+                                                        01751479585
                                                     </td>
                                                     <td className="px-6 py-4">
-                                                        <span>E-</span>
-                                                        <span>707</span>
+                                                        <span>10 </span>
+                                                        <span>semester</span>
                                                     </td>
                                                     <td className="px-6 py-4">
-                                                        <button className="bg-green-600 text-white rounded-lg px-2 py-1 cursor-no-drop">Remark</button>
+                                                        CSE
+                                                    </td>
+                                                    <td className="px-6 py-4">
+                                                        <p>Hall 01/Level/07/E107</p>
+                                                        <p>---</p>
+                                                        <p>Hall 04/Level/05/E106</p>
+                                                    </td>
+                                                    <td className="px-6 py-4">
+                                                        {/* <button className="bg-green-600 text-white rounded-lg px-2 py-1 cursor-no-drop">Accept</button>
+                                                        <button className="bg-green-600 text-white rounded-lg px-2 py-1 cursor-no-drop">Remark</button> */}
+                                                        <AiOutlineCheckCircle className="bg-green-600 text-white w-6 h-6 rounded-full cursor-pointer p-1 mb-2" />
+                                                        <AiOutlineCloseCircle className="bg-red-600 text-white w-6 h-6 rounded-full cursor-pointer p-1 mt-2" />
                                                     </td>
                                                 </tr>
                                             ))
@@ -139,7 +153,7 @@ const StudentBillInfo: FC = () => {
     );
 };
 
-export default StudentBillInfo;
+export default ChangeRoomRequest;
 
 
 
