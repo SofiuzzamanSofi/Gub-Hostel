@@ -49,7 +49,7 @@ const ComplainList: FC = () => {
                 <div className="">
                     <div className="text-center">
                         <h1 className="text-3xl font-bold text-[#35DC66] uppercase">
-                            Student Information
+                            Complain List
                         </h1>
                     </div>
 
