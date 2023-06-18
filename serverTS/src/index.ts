@@ -13,6 +13,7 @@ dotenv.config();
 // const userRouter = require('./routes/main')
 import mainRoute from './routes/main'
 import exampleRoute from './routes/example'
+import signUpRoute from './routes/auth/signup'
 
 
 
@@ -22,12 +23,15 @@ const port = process.env.PORT || 8000;
 const { MONGODB_URL } = process.env;
 
 
+// middleware --- 
 app.use(cors({
     credentials: true,
 }));
-app.use(cookieParser())
-app.use(compression())
-app.use(bodyParser.json())
+app.use(express.json())
+
+// app.use(cookieParser())
+// app.use(compression())
+// app.use(bodyParser.json())
 
 
 
@@ -58,5 +62,8 @@ mongoose.connect(MONGODB_URL)
 // });
 
 
+
+// define all routes -- 
 app.use("/", mainRoute);
 app.use("/example", exampleRoute);
+app.use("/auth/signup", signUpRoute);
