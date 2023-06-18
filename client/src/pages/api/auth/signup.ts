@@ -2,7 +2,6 @@ import { connectToMongoDB } from "lib/mongodb";
 import User from "models/user";
 import { NextApiRequest, NextApiResponse } from "next";
 import { hash } from "bcryptjs";
-
 import mongoose from "mongoose";
 import { UserTypes } from '../../../workArea/types/allCommonTypes';
 
@@ -11,7 +10,7 @@ const handler = async (
     res: NextApiResponse,
 ) => {
 
-    console.log("request is hitted on line 13 src/app/api/auth/sighup.ts");
+    console.log("request is hit on line 13 src/app/api/auth/signup.ts");
     connectToMongoDB().catch((err) => res.json(err));
 
     if (req.method === "POST") {
@@ -26,48 +25,44 @@ const handler = async (
         }
         else {
             if (password.length < 5) {
-                return res.status(400).json({ error: "Password too short need at least 6 character long." });
-            };
+                return res.status(400).json({ error: "Password too short, needs to be at least 6 characters long." });
+            }
 
-            const hassedPassword = await hash(password, 12)
+            const hashedPassword = await hash(password, 12)
 
-            User.create(
-                {
+            try {
+                const data = await User.create({
                     fullName,
                     email,
-                    password: hassedPassword,
-                },
-                (error: unknown, data: UserTypes) => {
-                    if (error && error instanceof mongoose.Error.ValidationError) {
-
-
-                        // mongodb return Array of error erro = [];  so loop through
-                        // we only want to show one error at a time 
-                        for (let field in error.errors) {
-
-                            const msg = error.errors[field].message;
-                            return res.status(409).json({ error: msg });
-                        }
-                    }
-
-                    // create API also returns the password but we don't want to show the password 
-                    const user = {
-                        fullName: data.fullName,
-                        email: data.email,
-                        _id: data._id,
-                    };
-
-                    // send successfully create user on db ---
-                    return res.status(2001).json({
-                        success: true,
-                        user,
-                    })
+                    password: hashedPassword,
                 });
+
+                const user = {
+                    fullName: data.fullName,
+                    email: data.email,
+                    _id: data._id,
+                };
+
+                return res.status(201).json({
+                    success: true,
+                    user,
+                });
+            } catch (error) {
+                if (error instanceof mongoose.Error.ValidationError) {
+                    // MongoDB returns an array of errors, so loop through
+                    // We only want to show one error at a time
+                    for (let field in error.errors) {
+                        const msg = error.errors[field].message;
+                        return res.status(409).json({ error: msg });
+                    }
+                }
+
+                return res.status(500).json({ error: "Internal server error" });
+            }
         }
+    } else {
+        res.status(405).json({ error: "Method not allowed" });
     }
-    else {
-        res.status(405).json({ error: "Method not allowed" })
-    }
-}
+};
 
 export default handler;
