@@ -5,7 +5,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
     res.send({
         success: true,
-        title: "This is main route",
+        title: "This is example route",
     });
 });
 
