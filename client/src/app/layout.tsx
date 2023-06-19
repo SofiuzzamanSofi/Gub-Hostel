@@ -25,7 +25,7 @@ export const metadata = {
 export default function RootLayout(
   { children, session }
     :
-    { children: React.ReactNode, session?: any }
+    { children: React.ReactNode, session: any }
 ) {
 
 
@@ -35,7 +35,7 @@ export default function RootLayout(
     <html lang="en">
       <body className={inter.className}>
         <>
-          <SessionProvider >
+          <SessionProvider session={session}>
             <Header />
             {children}
             <Footer />

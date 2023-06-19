@@ -39,11 +39,11 @@ const HallManagement: FC = () => {
 
     useEffect(() => {
         const fullName = localStorage.getItem('fullName');
-        if (!fullName) {
+        const email = localStorage.getItem('email');
+        if (!email) {
             toast.error("Please login first");
             return window.location.replace("/")
         }
-        const email = localStorage.getItem('email');
         setUserLocalStorage({
             fullName: fullName || '',
             email: email || '',
