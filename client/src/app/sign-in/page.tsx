@@ -15,7 +15,7 @@ const SignIn: FC = () => {
     const [mail, setMail] = useState('');
 
     const router = useRouter();
-    const pathname = usePathname()
+    const pathname = usePathname() ?? "";
     const pathNameTotalArray = pathname.split("/")
     const pathNameArray = pathNameTotalArray.filter((path) => path !== "").map((name) => name.replace("-", " "));
 

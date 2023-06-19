@@ -3,7 +3,6 @@ import User from "models/user";
 import { NextApiRequest, NextApiResponse } from "next";
 import { hash } from "bcryptjs";
 import mongoose from "mongoose";
-import { UserTypes } from '../../../workArea/types/allCommonTypes';
 
 const handler = async (
     req: NextApiRequest,
