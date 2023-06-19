@@ -4,9 +4,10 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 
 
 
-import { connectToMongoDB } from 'lib/mongodb'
-import User from 'models/user'
+import { connectToMongoDB } from '@/workArea/nextAuth/lib/mongodb'
+
 import { UserTypes } from '@/workArea/types/allCommonTypes'
+import User from '@/workArea/nextAuth/models/user'
 
 const options: NextAuthOptions = {
 

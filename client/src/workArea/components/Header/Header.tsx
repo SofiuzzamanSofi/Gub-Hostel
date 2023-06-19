@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react';
+import React, { createContext, useEffect, useState } from 'react'
 import logo from '../../assets/green-university.png';
 import profileLogo from '../../assets/profileLogo.jpg';
 import Link from 'next/link';
@@ -8,9 +8,33 @@ import Image from 'next/image';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
 const Header: React.FC = () => {
-    const { data: session } = useSession();
 
+
+    const [userLocalStorage, setUserLocalStorage] = useState({
+        fullName: "",
+        email: "",
+    })
+    const { data: session } = useSession();
+    // const session = useSession();
     console.log("session:", session,)
+
+
+
+
+    useEffect(() => {
+        const fullName = localStorage.getItem('fullName');
+        const email = localStorage.getItem('email');
+        setUserLocalStorage({
+            fullName: fullName || '',
+            email: email || '',
+        });
+
+        // return () => unsubscribe();
+    }, []);
+
+    console.log("userLocalStorage::", userLocalStorage)
+
+
 
     const menuList = (
         <>
@@ -61,11 +85,13 @@ const Header: React.FC = () => {
                         </ul>
                     </div>
                     <div className="dropdown dropdown-hover dropdown-bottom dropdown-end">
-                        {session ? (
+                        {userLocalStorage?.email ? (
                             <>
                                 <label tabIndex={0} className="  font-semibold lg:text-xl hover:text-green-400">
 
-                                    <Image className='w-[75px] lg:w-[227px] h-[50px] lg:h-[83.99px] rounded-full border border-red-500' src={profileLogo} alt="profileLogo" />
+                                    <Image className='w-[75px] lg:w-[227px] h-[50px] lg:h-[83.99px] rounded-full border border-red-500' src={profileLogo} alt="profileLogo"
+                                        title={session?.user?.email ? session?.user?.email : ""}
+                                    />
 
                                 </label>
                                 <ul tabIndex={0} className="dropdown-content menu p-3 shadow bg-base-100 rounded-box w-52">
@@ -74,8 +100,12 @@ const Header: React.FC = () => {
                                             DASHBOARD
                                         </li>
                                     </Link>
-                                    <Link href="/sign-up">
-                                        <li className='py-2 text-center text-red-500 border hover:bg-red-600 hover:text-white border-red-500 rounded-md'>
+                                    <Link href="/sign-up"
+
+                                    >
+                                        <li className='py-2 text-center text-red-500 border hover:bg-red-600 hover:text-white border-red-500 rounded-md'
+                                            onClick={() => signOut()}
+                                        >
                                             SIGN OUT
                                         </li>
                                     </Link>

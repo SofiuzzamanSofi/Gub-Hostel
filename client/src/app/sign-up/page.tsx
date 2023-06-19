@@ -8,7 +8,7 @@ import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 import { toast } from 'react-hot-toast';
 import axios, { AxiosError } from 'axios';
-import { loginUser } from 'helpers';
+import { loginUser } from '@/workArea/nextAuth/helpers';
 
 
 
@@ -75,7 +75,13 @@ const Signup: FC = () => {
                     }
                     else {
                         toast.success(`Successfully signed up. Please check your email and sign up ${studentName}`);
-                        router.push('/verify-email');
+
+                        // Set user's full name and email in localStorage
+                        localStorage.setItem('fullName', userInputData.fullName);
+                        localStorage.setItem('email', userInputData.email);
+
+                        // router.push('/verify-email'); // Reload the window
+                        window.location.replace('/verify-email'); // Reload the window
                     }
                 }
             } catch (error: unknown) {

@@ -1,8 +1,9 @@
-import { connectToMongoDB } from "lib/mongodb";
-import User from "models/user";
+import { connectToMongoDB } from "@/workArea/nextAuth/lib/mongodb";
+
 import { NextApiRequest, NextApiResponse } from "next";
 import { hash } from "bcryptjs";
 import mongoose from "mongoose";
+import User from "@/workArea/nextAuth/models/user";
 
 const handler = async (
     req: NextApiRequest,
