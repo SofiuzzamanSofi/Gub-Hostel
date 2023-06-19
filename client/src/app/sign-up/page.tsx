@@ -11,7 +11,7 @@ import axios, { AxiosError } from 'axios';
 
 
 
-const Signup: FC = async () => {
+const Signup: FC = () => {
     const router = useRouter();
     const [studentId, setStudentId] = useState('');
     const [studentName, setStudentName] = useState('');
@@ -48,18 +48,17 @@ const Signup: FC = async () => {
         } else {
             setLoading(true);
             try {
-                // const userInputData = {
-                //     studentId,
-                //     studentName,
-                //     department,
-                //     semester,
-                //     mobile,
-                //     mail,
-                //     password,
-                // };
                 const userInputData = {
-                    fullName: studentName, email: mail, password
+                    fullName: studentName,
+                    email: mail,
+                    password,
+                    studentId,
+                    department,
+                    semester,
+                    mobile,
+                    mail,
                 };
+
                 const apiRes = await axios.post(
                     `http://localhost:3000/api/auth/signup`,
                     userInputData
@@ -167,6 +166,12 @@ const Signup: FC = async () => {
                                         onChange={(e) => setPassword(e.target.value)}
                                         required
                                     />
+                                    <div>
+                                        {
+                                            submitError &&
+                                            <p className='text-sm text-red-600'>{submitError}</p>
+                                        }
+                                    </div>
                                 </div>
                                 <div>
                                     <CommonButton buttonText="Sign Up" />
