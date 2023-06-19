@@ -4,6 +4,8 @@ import { FC } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
+import React, { createContext, useEffect, useState } from 'react'
+
 
 import { GrFolderCycle } from 'react-icons/gr';
 import { GoGitCompare, GoGitPullRequest } from 'react-icons/go';
@@ -11,6 +13,7 @@ import { BsFillInfoSquareFill, BsFillPersonFill } from 'react-icons/bs';
 import { FaHandPointUp, FaRecycle, FaQuestionCircle } from 'react-icons/fa';
 import { MdNotificationsActive, MdOutlineCancel, MdFreeCancellation } from 'react-icons/md';
 import { AiFillFile, AiFillHome, AiFillInfoCircle, AiOutlineUnorderedList } from 'react-icons/ai';
+import { useSession } from 'next-auth/react';
 
 
 
@@ -19,11 +22,30 @@ import { AiFillFile, AiFillHome, AiFillInfoCircle, AiOutlineUnorderedList } from
 const HallManagement: FC = () => {
 
 
+    const [userLocalStorage, setUserLocalStorage] = useState({
+        fullName: "",
+        email: "",
+    })
+    const { data: session } = useSession();
+    // const session = useSession();
+    console.log("session:", session,)
+    console.log("session er nicha userLocalStorage:", userLocalStorage,)
+
     const pathname = usePathname() ?? '';
     const pathNameTotalArray = pathname.split("/")
     const pathNameArray = pathNameTotalArray.filter((path) => path !== "").map((name) => name.replace("-", " "));
 
 
+    useEffect(() => {
+        const fullName = localStorage.getItem('fullName');
+        const email = localStorage.getItem('email');
+        setUserLocalStorage({
+            fullName: fullName || '',
+            email: email || '',
+        });
+
+        // return () => unsubscribe();
+    }, []);
 
 
 

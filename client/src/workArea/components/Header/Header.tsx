@@ -32,6 +32,19 @@ const Header: React.FC = () => {
         // return () => unsubscribe();
     }, []);
 
+
+    const handleSignOutFunction = (e: {
+        stopPropagation(): unknown; preventDefault: () => void
+    }) => {
+
+        // signOut()
+        localStorage.removeItem('fullName');
+        localStorage.removeItem('email');
+        window.location.replace('/'); // Reload the window
+        e.stopPropagation();
+    };
+
+
     console.log("userLocalStorage::", userLocalStorage)
 
 
@@ -94,21 +107,23 @@ const Header: React.FC = () => {
                                     />
 
                                 </label>
-                                <ul tabIndex={0} className="dropdown-content menu p-3 shadow bg-base-100 rounded-box w-52">
+                                <ul tabIndex={0} className="dropdown-content menu p-3 shadow bg-base-100 rounded-box w-52"
+                                // onClick={() => console.log("this is clicked")}
+                                >
                                     <Link href="/hall-management">
                                         <li className='py-2 text-center hover:text-green-400'>
                                             DASHBOARD
                                         </li>
                                     </Link>
-                                    <Link href="/sign-up"
+                                    {/* <Link href="/sign-up"
 
+                                    > */}
+                                    <li className='py-2 text-center text-red-500 border hover:bg-red-600 hover:text-white border-red-500 rounded-md cursor-pointer'
+                                        onClick={handleSignOutFunction}
                                     >
-                                        <li className='py-2 text-center text-red-500 border hover:bg-red-600 hover:text-white border-red-500 rounded-md'
-                                            onClick={() => signOut()}
-                                        >
-                                            SIGN OUT
-                                        </li>
-                                    </Link>
+                                        SIGN OUT
+                                    </li>
+                                    {/* </Link> */}
                                 </ul>
                             </>
                         ) : (
