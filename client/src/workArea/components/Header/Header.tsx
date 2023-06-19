@@ -102,7 +102,7 @@ const Header: React.FC = () => {
                             <>
                                 <label tabIndex={0} className="  font-semibold lg:text-xl hover:text-green-400">
 
-                                    <Image className='w-[75px] lg:w-[227px] h-[50px] lg:h-[83.99px] rounded-full border border-red-500' src={profileLogo} alt="profileLogo"
+                                    <Image className='w-[65px] h-[65px] rounded-full border border-red-500' src={profileLogo} alt="profileLogo"
                                         title={session?.user?.email ? session?.user?.email : ""}
                                     />
 

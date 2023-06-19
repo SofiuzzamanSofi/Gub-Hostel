@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { FC } from 'react'
 
 interface pageProps {
@@ -18,6 +19,15 @@ const page: FC<pageProps> = ({ }) => {
         <div className="text-center">
           <h1 className='text-center text-md dark:text-white'>
             You are almost there, Check your mail inbox for a link with verification and finish setting yp your accounts password.
+          </h1>
+        </div>
+        <div className="text-center mt-4 ">
+          <h1 className='text-center text-md'>
+            <Link href="/hall-management"
+              className='py-2 text-center border rounded-md p-4 bg-green-500 text-white'
+            >
+              DASHBOARD
+            </Link>
           </h1>
         </div>
 
