@@ -9,6 +9,7 @@ import User from 'models/user'
 import { UserTypes } from '@/workArea/types/allCommonTypes'
 
 const options: NextAuthOptions = {
+
     providers: [
         CredentialsProvider({
             id: "credentials",

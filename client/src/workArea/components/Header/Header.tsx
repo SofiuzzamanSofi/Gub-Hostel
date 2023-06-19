@@ -4,7 +4,7 @@ import React from 'react';
 import logo from '../../assets/green-university.png';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useSession } from 'next-auth/react';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 const Header: React.FC = () => {
     const { data: session } = useSession();

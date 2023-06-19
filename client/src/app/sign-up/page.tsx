@@ -81,13 +81,14 @@ const Signup: FC = () => {
             } catch (error: unknown) {
                 console.log(error);
                 if (error instanceof AxiosError) {
-                    setSubmitError(error.response?.data?.error);
+                    console.log("error?.response?.data?.error:", error?.response?.data?.error)
+                    toast.error(error?.response?.data?.error || "Something went wrong");
+                    setSubmitError(error?.response?.data?.error);
                 } else {
                     setSubmitError('Error: on Catch block');
                     toast.error('Something went wrong on the catch block');
                 }
             }
-            setSubmitError("")
             setLoading(false);
         }
     };
