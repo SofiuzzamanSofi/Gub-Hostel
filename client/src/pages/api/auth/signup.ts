@@ -16,7 +16,15 @@ const handler = async (
     if (req.method === "POST") {
         if (!req.body) return res.status(400).json({ error: "Data is missing" });
 
-        const { fullName, email, password } = req.body;
+        const {
+            fullName,
+            email,
+            password,
+            studentId,
+            department,
+            semester,
+            mobile,
+        } = req.body;
 
         const userExists = await User.findOne({ email: email })
 
@@ -30,12 +38,23 @@ const handler = async (
 
             const hashedPassword = await hash(password, 12)
 
+
+            console.log("mobilemobile object:", mobile)
+
             try {
                 const data = await User.create({
                     fullName,
                     email,
                     password: hashedPassword,
+                    studentId,
+                    department,
+                    semester,
+                    mobile,
                 });
+
+
+                console.log("mobilemobile data.mobile:", data.mobile)
+
 
                 const user = {
                     fullName: data.fullName,

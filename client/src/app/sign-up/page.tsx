@@ -57,9 +57,10 @@ const Signup: FC = () => {
                     department,
                     semester,
                     mobile,
-                    mail,
                 };
-
+                // setLoading(false);
+                // console.log("mobilemobile object:", userInputData.mobile)
+                // return;
                 const apiRes = await axios.post(
                     `http://localhost:3000/api/auth/signup`,
                     userInputData
@@ -158,7 +159,7 @@ const Signup: FC = () => {
 
                                     <input
                                         className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
-                                        type="text"
+                                        type="number"
                                         name="mobile"
                                         placeholder="Mobile No"
                                         value={mobile}

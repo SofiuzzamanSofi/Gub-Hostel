@@ -14,7 +14,15 @@ router.post("/", async (req, res) => {
 
     if (!req.body) return res.status(400).json({ error: "Data is missing" })
 
-    const { fullName, email, password } = req.body
+    const {
+        fullName,
+        email,
+        password,
+        studentId,
+        department,
+        semester,
+        mobile,
+    } = req.body
 
     const userExists = await User.findOne({ email })
 
@@ -30,7 +38,11 @@ router.post("/", async (req, res) => {
         User.create({
             fullName,
             email,
-            password: hashedPassword
+            password: hashedPassword,
+            studentId,
+            department,
+            semester,
+            mobile,
         }, (error: unknown, data: UserTypes) => {
             if (error && error instanceof mongoose.Error.ValidationError) {
                 //mongo db will return array
