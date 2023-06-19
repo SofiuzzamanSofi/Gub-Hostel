@@ -11,7 +11,7 @@ import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeB
 const Admission: React.FC = () => {
 
 
-    const pathname = usePathname()
+    const pathname = usePathname() ?? '';
     const pathNameTotalArray = pathname.split("/")
     const pathNameArray = pathNameTotalArray.filter((path) => path !== "")
 

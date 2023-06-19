@@ -12,7 +12,7 @@ import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeB
 
 const HallFacilities = () => {
 
-    const pathname = usePathname()
+    const pathname = usePathname() ?? '';
     const pathNameTotalArray = pathname.split("/")
     const pathNameArray = pathNameTotalArray.filter((path) => path !== "").map((name) => name.replace("-", " "));
 

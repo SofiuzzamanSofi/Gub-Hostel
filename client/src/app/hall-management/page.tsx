@@ -19,7 +19,7 @@ import { AiFillFile, AiFillHome, AiFillInfoCircle, AiOutlineUnorderedList } from
 const HallManagement: FC = () => {
 
 
-    const pathname = usePathname()
+    const pathname = usePathname() ?? '';
     const pathNameTotalArray = pathname.split("/")
     const pathNameArray = pathNameTotalArray.filter((path) => path !== "").map((name) => name.replace("-", " "));
 

@@ -25,7 +25,7 @@ const SeatCancelletion: FC = () => {
     const [mail, setMail] = useState('');
 
 
-    const pathname = usePathname()
+    const pathname = usePathname() ?? '';
     const pathNameTotalArray = pathname.split("/")
     const pathNameArray = pathNameTotalArray.filter((path) => path !== "").map((name) => name.replace("-", " "));
 
@@ -234,7 +234,7 @@ const SeatCancelletion: FC = () => {
     );
 };
 
-export default SeatCancelletion    ;
+export default SeatCancelletion;
 
 
 

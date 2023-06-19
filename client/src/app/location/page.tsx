@@ -14,7 +14,7 @@ const Location: React.FC = () => {
 
 
 
-    const pathname = usePathname()
+    const pathname = usePathname() ?? '';
     const pathNameTotalArray = pathname.split("/")
     const pathNameArray = pathNameTotalArray.filter((path) => path !== "")
 
