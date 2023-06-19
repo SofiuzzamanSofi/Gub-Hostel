@@ -26,8 +26,11 @@ const SignIn: FC = () => {
         e.preventDefault();
 
         console.log("this is console.log");
-        // router.push("/" as string, undefined,  {shallow: true});
-        // router.replace("/")
+
+        // ------ 
+        // ----
+        // ---
+
         router.push("/hall-management");
     };
 

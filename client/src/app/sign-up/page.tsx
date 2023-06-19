@@ -8,6 +8,7 @@ import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 import { toast } from 'react-hot-toast';
 import axios, { AxiosError } from 'axios';
+import { loginUser } from 'helpers';
 
 
 
@@ -19,7 +20,7 @@ const Signup: FC = () => {
     const [semester, setSemester] = useState('');
     const [mobile, setMobile] = useState('');
     const [mail, setMail] = useState('');
-    const [password, setPassword] = useState('');
+    const [password, setPassword] = useState<string>('');
     const [submitError, setSubmitError] = useState('');
     const [loading, setLoading] = useState(false);
 
@@ -64,8 +65,18 @@ const Signup: FC = () => {
                     userInputData
                 );
                 if (apiRes?.data?.success) {
-                    toast.success(`Successfully signed up. Please check your email and sign up ${studentName}`);
-                    router.push('/verify-email');
+
+                    const loginRes = await loginUser({
+                        email: userInputData.email,
+                        password: userInputData.password
+                    })
+                    if (loginRes && !loginRes.ok) {
+                        setSubmitError(loginRes.error || "Error Login Function");
+                    }
+                    else {
+                        toast.success(`Successfully signed up. Please check your email and sign up ${studentName}`);
+                        router.push('/verify-email');
+                    }
                 }
             } catch (error: unknown) {
                 console.log(error);
@@ -76,6 +87,7 @@ const Signup: FC = () => {
                     toast.error('Something went wrong on the catch block');
                 }
             }
+            setSubmitError("")
             setLoading(false);
         }
     };
@@ -174,7 +186,7 @@ const Signup: FC = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <CommonButton buttonText="Sign Up" />
+                                    <CommonButton buttonText={`${loading ? "Loading..." : "Sign Up"}`} isDisabled={loading ? true : false} />
                                 </div>
                             </form>
                         </div>

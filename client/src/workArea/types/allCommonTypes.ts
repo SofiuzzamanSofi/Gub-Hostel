@@ -15,4 +15,13 @@ export interface UserTypes {
     _id: string;
     email: string;
     fullName: string;
+};
+
+export interface InputErrors {
+    [key: string]: string;
+};
+
+export interface LoginUserParams {
+    email: string;
+    password: string;
 }
