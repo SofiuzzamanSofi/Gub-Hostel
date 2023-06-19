@@ -2,6 +2,7 @@
 
 import React from 'react';
 import logo from '../../assets/green-university.png';
+import profileLogo from '../../assets/profileLogo.jpg';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSession, signIn, signOut } from 'next-auth/react';
@@ -9,7 +10,7 @@ import { useSession, signIn, signOut } from 'next-auth/react';
 const Header: React.FC = () => {
     const { data: session } = useSession();
 
-    console.log("session:", session)
+    console.log("session:", session,)
 
     const menuList = (
         <>
@@ -63,11 +64,21 @@ const Header: React.FC = () => {
                         {session ? (
                             <>
                                 <label tabIndex={0} className="  font-semibold lg:text-xl hover:text-green-400">
-                                    <span className='bordar p-4 bg-green-500 hover:bg-green-600 rounded-md text-white'>Active</span>
+
+                                    <Image className='w-[75px] lg:w-[227px] h-[50px] lg:h-[83.99px] rounded-full border border-red-500' src={profileLogo} alt="profileLogo" />
+
                                 </label>
                                 <ul tabIndex={0} className="dropdown-content menu p-3 shadow bg-base-100 rounded-box w-52">
-                                    <Link href="/sign-in"><li className='my-2 text-center hover:text-green-400'>SIGN IN</li></Link>
-                                    <Link href="/sign-up"><li className='my-2 text-center hover:text-green-400'>SIGN UP</li></Link>
+                                    <Link href="/hall-management">
+                                        <li className='py-2 text-center hover:text-green-400'>
+                                            DASHBOARD
+                                        </li>
+                                    </Link>
+                                    <Link href="/sign-up">
+                                        <li className='py-2 text-center text-red-500 border hover:bg-red-600 hover:text-white border-red-500 rounded-md'>
+                                            SIGN OUT
+                                        </li>
+                                    </Link>
                                 </ul>
                             </>
                         ) : (

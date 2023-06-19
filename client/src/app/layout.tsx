@@ -1,3 +1,5 @@
+"use client"
+
 import './globals.css';
 import { Inter } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
@@ -5,7 +7,7 @@ import { Toaster } from 'react-hot-toast';
 
 import Footer from '@/workArea/components/Footer/Footer';
 import Header from '@/workArea/components/Header/Header';
-import { NextAuthProvider } from './../workArea/nextAuth/nextAuthProvider/provider';
+import { SessionProvider } from "next-auth/react"
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -33,12 +35,12 @@ export default function RootLayout(
     <html lang="en">
       <body className={inter.className}>
         <>
-          <NextAuthProvider>
+          <SessionProvider session={session}>
             <Header />
             {children}
             <Footer />
             <Toaster />
-          </NextAuthProvider>
+          </SessionProvider>
         </>
       </body>
     </html>
