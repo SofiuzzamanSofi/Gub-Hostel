@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "gub-hostel-server-description",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "node ./dist/application.js",
+    "start": "node ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
