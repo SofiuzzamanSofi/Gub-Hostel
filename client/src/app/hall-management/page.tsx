@@ -101,7 +101,6 @@ const HallManagement: FC = () => {
                         {
                             userLocalStorage?.email === "admin@gmail.com" ?
 
-
                                 <>
                                     <Link
                                         href={{
