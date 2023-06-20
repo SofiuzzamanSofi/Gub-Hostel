@@ -166,7 +166,7 @@ const Signup: FC = () => {
                                         onChange={(e) => setMobile(e.target.value)}
                                         required
                                     />
-
+                                    <label htmlFor="email"></label>
                                     <input
                                         className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
                                         type="email"
@@ -176,7 +176,7 @@ const Signup: FC = () => {
                                         onChange={(e) => setMail(e.target.value)}
                                         required
                                     />
-
+                                    <label htmlFor="password"></label>
                                     <input
                                         className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
                                         type="password"
