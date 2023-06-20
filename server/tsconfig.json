@@ -1,14 +1,13 @@
 {
     "compilerOptions": {
         "module": "NodeNext",
-        "moduleResolution": "node",
+        "moduleResolution": "Node",
         "baseUrl": "src",
         "outDir": "dist",
         "sourceMap": true,
         "noImplicitAny": true,
     },
     "include": [
-        "src/**/*",
-        "../client/src/pages"
+        "src/**/*"
     ],
 }
