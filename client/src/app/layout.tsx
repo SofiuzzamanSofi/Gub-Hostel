@@ -5,10 +5,7 @@ import { Toaster } from 'react-hot-toast';
 
 import Footer from '@/workArea/components/Footer/Footer';
 import Header from '@/workArea/components/Header/Header';
-import { SessionProvider } from "next-auth/react"
-import { Session } from 'next-auth';
-import { ReactNode } from 'react';
-import type { AppProps } from "next/app";
+import { NextAuthProviderOwnBuild } from './../workArea/nextAuth/nextAuthProvider/provider';
 
 
 
@@ -20,43 +17,26 @@ export const metadata = {
 };
 
 
+export default function RootLayout(
+  // { children, session }
+  //   :
+  //   { children: React.ReactNode, session: any }
 
+  { children }: { children: React.ReactNode }
+) {
 
-type RootLayoutProps = {
-  Component: React.ComponentType<any>;
-  pageProps: {
-    session: Session | null;
-    [key: string]: any;
-  };
-  children?: ReactNode;
-};
-
-
-
-export default function RootLayout({ Component, pageProps: { pageProps } }: AppProps) {
   return (
-    <>
-
-      {/* <SessionProvider session={session}>
+    <html lang="en">
+      <body className={inter.className}>
+        <>
+          <NextAuthProviderOwnBuild>
             <Header />
-            <Component {...pageProps} >
-            </Component>
             {children}
             <Footer />
             <Toaster />
-          </SessionProvider> */}
-
-      <SessionProvider>
-
-        <Component {...pageProps} >
-          <Header />
-          <Footer />
-          <Toaster />
-        </Component>
-
-      </SessionProvider>
-
-
-    </>
+          </NextAuthProviderOwnBuild>
+        </>
+      </body>
+    </html>
   );
 }

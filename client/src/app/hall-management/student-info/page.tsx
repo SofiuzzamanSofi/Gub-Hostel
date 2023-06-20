@@ -3,15 +3,20 @@
 import React from "react"
 import Link from 'next/link';
 import { FC, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { toast } from "react-hot-toast";
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
+import { ParsedUrlQuery } from 'querystring';
 import { usePathname } from 'next/navigation'
+import { AiOutlineSearch } from 'react-icons/ai';
 import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
-import { toast } from "react-hot-toast";
-import { AiOutlineSearch } from 'react-icons/ai';
 
 
 
+interface QueryParams extends ParsedUrlQuery {
+    email?: string;
+    fullName?: string;
+}
 
 
 const StudentInfo: FC = () => {
@@ -30,6 +35,12 @@ const StudentInfo: FC = () => {
     const pathNameTotalArray = pathname.split("/")
     const pathNameArray = pathNameTotalArray.filter((path) => path !== "").map((name) => name.replace("-", " "));
 
+
+
+
+
+
+
     const handleSeatBooking = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
@@ -39,8 +50,10 @@ const StudentInfo: FC = () => {
         toast.success('Successfully toasted!')
         router.push("/hall-management");
     };
+    const searchParams = useSearchParams()
 
-
+    const email = searchParams?.get('email') ?? '';
+    console.log("routerrouter: student info: line 45", email)
 
     return (
         <div className='my-12'>

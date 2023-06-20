@@ -1,27 +1,46 @@
 export interface hallFacilitiesDataTypes {
-    id: string;
-    title: string;
-    para: string;
+    id: String;
+    title: String;
+    para: String;
 };
 
 export interface roomFacilitiesDataTypes {
-    id: string;
-    title: string;
-    para: string[];
+    id: String;
+    title: String;
+    para: String[];
 };
 
 
 export interface UserTypes {
-    _id: string;
-    email: string;
-    fullName: string;
+    _id: String;
+    email: String;
+    fullName: String;
 };
 
-export interface InputErrors {
-    [key: string]: string;
+export interface InputErrorsTypes {
+    [key: string]: String;
 };
 
-export interface LoginUserParams {
-    email: string;
-    password: string;
+export interface LoginUserParamsTypes {
+    email: String;
+    password: String;
 }
+
+
+export interface userLocalStorageTypes {
+    fullName?: String;
+    email?: String;
+}
+
+export interface loginUserInfoUserTypes {
+    fullName: String;
+    email: String;
+    department: String;
+    mobile: String;
+    password: String;
+    semester: String;
+    studentId: String;
+    _id: String;
+    __v: Number;
+}
+

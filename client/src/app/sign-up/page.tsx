@@ -62,7 +62,7 @@ const Signup: FC = () => {
                 // console.log("mobilemobile object:", userInputData.mobile)
                 // return;
                 const apiRes = await axios.post(
-                    `http://localhost:3000/api/auth/signup`,
+                    `${process.env.NEXT_PUBLIC_SERVER_OR_API_URL}/auth/signup`,
                     userInputData
                 );
                 if (apiRes?.data?.success) {

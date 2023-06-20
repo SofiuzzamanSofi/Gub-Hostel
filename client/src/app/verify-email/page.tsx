@@ -21,10 +21,10 @@ const page: FC<pageProps> = ({ }) => {
             You are almost there, Check your mail inbox for a link with verification and finish setting yp your accounts password.
           </h1>
         </div>
-        <div className="text-center mt-4 ">
+        <div className="text-center mt-8 ">
           <h1 className='text-center text-md'>
             <Link href="/hall-management"
-              className='py-2 text-center border rounded-md p-4 bg-green-500 text-white'
+              className='text-center border py-4 px-6 rounded-md bg-green-500 text-white'
             >
               DASHBOARD
             </Link>

@@ -15,6 +15,8 @@ import { MdNotificationsActive, MdOutlineCancel, MdFreeCancellation } from 'reac
 import { AiFillFile, AiFillHome, AiFillInfoCircle, AiOutlineUnorderedList } from 'react-icons/ai';
 import { useSession } from 'next-auth/react';
 import { toast } from 'react-hot-toast';
+import axios from 'axios';
+import { loginUserInfoUserTypes, userLocalStorageTypes } from './../../workArea/types/allCommonTypes';
 
 
 
@@ -23,10 +25,8 @@ import { toast } from 'react-hot-toast';
 const HallManagement: FC = () => {
 
 
-    const [userLocalStorage, setUserLocalStorage] = useState({
-        fullName: "",
-        email: "",
-    })
+    const [userLocalStorage, setUserLocalStorage] = useState<userLocalStorageTypes>()
+    const [loginUserInfoUser, setLoginUserInfoUser] = useState<loginUserInfoUserTypes>();
     const { data: session } = useSession();
     // const session = useSession();
     console.log("session:", session,)
@@ -38,19 +38,60 @@ const HallManagement: FC = () => {
 
 
     useEffect(() => {
-        const fullName = localStorage.getItem('fullName');
-        const email = localStorage.getItem('email');
-        if (!email) {
-            toast.error("Please login first");
-            return window.location.replace("/")
-        }
-        setUserLocalStorage({
-            fullName: fullName || '',
-            email: email || '',
-        });
+        const fetchData = async () => {
+            const fullName = localStorage.getItem('fullName');
+            const email = localStorage.getItem('email');
+            if (!email) {
+                toast.error("Please login first");
+                return window.location.replace("/");
+            }
+            else {
+                try {
+                    const loginUserInfo = await axios.post(
+                        `${process.env.NEXT_PUBLIC_EXPRESS_TYPESCRIPT_API_URL}/oneUserRoute`,
+                        { email }
+                    );
+                    if (!loginUserInfo) {
+                        toast.error("Please login first/ user not found on database");
+                        return window.location.replace("/");
+                    }
 
-        // return () => unsubscribe();
+                    console.log("loginUserInfo: 62", loginUserInfo?.data)
+                    setLoginUserInfoUser(loginUserInfo?.data)
+                    setUserLocalStorage({
+                        fullName: fullName || '',
+                        email: email || '',
+                    });
+                } catch (error) {
+                    // Handle error
+                }
+            }
+        };
+
+        fetchData();
+
+        // Cleanup function (if necessary)
+        return () => {
+            // Cleanup code
+        };
     }, []);
+
+
+
+
+    // const getHrefFunction = (urlToGo: string) => {
+    const data = {
+        email: "9sofiuzzaman.sf@gmail.com",
+        fullName: "sofi1"
+    };
+
+    const queryString = new URLSearchParams(data).toString();
+    const href = `/hall-management/student-info?${queryString}`;
+    // }
+
+
+
+
 
 
 
@@ -75,7 +116,12 @@ const HallManagement: FC = () => {
 
 
                                 <>
-                                    <Link href="/hall-management/student-info" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                                    <Link
+                                        href={{
+                                            pathname: "/hall-management/student-info",
+                                            query: data
+                                        }}
+                                        className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                         <AiFillInfoCircle className='w-14 h-16' />
                                         <p>Student Info</p>
                                     </Link>
