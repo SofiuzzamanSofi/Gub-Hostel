@@ -10,7 +10,7 @@ const handler = async (
     res: NextApiResponse,
 ) => {
 
-    console.log("request is hit on line 13 src/app/api/auth/signup.ts");
+
     connectToMongoDB().catch((err) => res.json(err));
 
     if (req.method === "POST") {
@@ -53,9 +53,6 @@ const handler = async (
                 });
 
 
-                console.log("mobilemobile data.mobile:", data.mobile)
-
-
                 const user = {
                     fullName: data.fullName,
                     email: data.email,
@@ -66,7 +63,8 @@ const handler = async (
                     success: true,
                     user,
                 });
-            } catch (error) {
+            } 
+            catch (error) {
                 if (error instanceof mongoose.Error.ValidationError) {
                     // MongoDB returns an array of errors, so loop through
                     // We only want to show one error at a time

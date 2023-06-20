@@ -24,7 +24,7 @@ const StudentInfo: FC = () => {
 
     const router = useRouter();
     const searchParams = useSearchParams()
-    
+
     const [studentId, setStudentId] = useState('');
     const [studentName, setStudentName] = useState('');
     const [department, setDepartment] = useState('');
@@ -46,16 +46,12 @@ const StudentInfo: FC = () => {
     const handleSeatBooking = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
-        console.log("this is console.log");
-        // router.push("/" as string, undefined,  {shallow: true});
-        // router.replace("/")
         toast.success('Successfully toasted!')
         router.push("/hall-management");
     };
-    
+
 
     const email = searchParams?.get('email') ?? '';
-    console.log("routerrouter: student info: line 45", email)
 
     return (
         <div className='my-12'>

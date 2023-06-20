@@ -30,7 +30,6 @@ const SignIn: FC = () => {
     const handleSignIn = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
-        console.log("this is console.log");
 
         const logInputUserData = {
             email: mail,

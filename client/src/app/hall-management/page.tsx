@@ -45,7 +45,6 @@ const HallManagement: FC = () => {
             }
             else {
                 try {
-                    console.log("email on local storeage", email);
                     const loginUserInfo = await axios.post(
                         `${process.env.NEXT_PUBLIC_EXPRESS_TYPESCRIPT_API_URL}/oneUserRoute`,
                         { email }
@@ -75,20 +74,7 @@ const HallManagement: FC = () => {
         };
     }, []);
 
-
-
-
-    // const getHrefFunction = (urlToGo: string) => {
-    // const data = {
-    //     email: "9sofiuzzaman.sf@gmail.com",
-    //     fullName: "sofi1"
-    // };
-
     console.log("loginUserInfo: dashboard main: 86", loginUserInfoUser)
-
-    // const queryString = new URLSearchParams(data).toString();
-    // const href = `/hall-management/student-info?${queryString}`;
-    // }
 
 
 

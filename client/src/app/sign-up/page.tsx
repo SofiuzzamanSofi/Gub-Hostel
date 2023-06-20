@@ -43,8 +43,8 @@ const Signup: FC = () => {
             mail.trim() === '' ||
             password.trim() === ''
         ) {
+            
             // Display an error message or handle the validation failure
-            console.log('Please fill out all fields');
             return toast.error('Please fill out all fields properly');
         } else {
             setLoading(true);
@@ -58,9 +58,7 @@ const Signup: FC = () => {
                     semester,
                     mobile,
                 };
-                // setLoading(false);
-                // console.log("mobilemobile object:", userInputData.mobile)
-                // return;
+        
                 const apiRes = await axios.post(
                     `${process.env.NEXT_PUBLIC_SERVER_OR_API_URL}/auth/signup`,
                     userInputData

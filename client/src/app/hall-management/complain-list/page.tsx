@@ -33,9 +33,6 @@ const ComplainList: FC = () => {
     const handleSeatBooking = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
-        console.log("this is console.log");
-        // router.push("/" as string, undefined,  {shallow: true});
-        // router.replace("/")
         toast.success('Successfully toasted!')
         router.push("/hall-management");
     };
