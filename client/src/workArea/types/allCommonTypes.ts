@@ -42,5 +42,6 @@ export interface loginUserInfoUserTypes {
     studentId: String;
     _id: String;
     __v: Number;
+    // __v: Number | String;
 }
 

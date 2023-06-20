@@ -16,7 +16,7 @@ const Header: React.FC = () => {
     })
     const { data: session } = useSession();
     // const session = useSession();
-    console.log("session:", session,)
+    // console.log("session:", session,)
 
 
 
@@ -45,7 +45,7 @@ const Header: React.FC = () => {
     };
 
 
-    console.log("userLocalStorage::", userLocalStorage)
+    // console.log("userLocalStorage::", userLocalStorage)
 
 
 

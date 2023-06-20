@@ -78,8 +78,9 @@ const Signup: FC = () => {
                         toast.success(`Successfully signed up. Please check your email and sign up ${studentName}`);
 
                         // Set user's full name and email in localStorage
-                        localStorage.setItem('fullName', userInputData.fullName);
-                        localStorage.setItem('email', userInputData.email);
+                        localStorage.setItem('fullName', studentName);
+                        localStorage.setItem('email', mail);
+
 
                         // router.push('/verify-email'); // Reload the window
                         window.location.replace('/verify-email'); // Reload the window

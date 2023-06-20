@@ -3,7 +3,7 @@
 import React from "react"
 import Link from 'next/link';
 import { FC, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { usePathname } from 'next/navigation'
 import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
@@ -17,6 +17,8 @@ const SeatBooking: FC = () => {
 
 
     const router = useRouter();
+    const searchParams = useSearchParams()
+
     const [studentId, setStudentId] = useState('');
     const [studentName, setStudentName] = useState('');
     const [department, setDepartment] = useState('');
@@ -32,14 +34,15 @@ const SeatBooking: FC = () => {
     const handleSeatBooking = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
-        console.log("this is console.log");
+        // console.log("this is console.log");
         // router.push("/" as string, undefined,  {shallow: true});
         // router.replace("/")
         toast.success('Successfully toasted!')
         router.push("/hall-management");
     };
 
-
+    const email = searchParams?.get('email') ?? '';
+    console.log("seat booking from page line 45:", email)
 
     return (
         <div className='my-12'>

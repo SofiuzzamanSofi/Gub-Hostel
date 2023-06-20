@@ -23,6 +23,8 @@ const StudentInfo: FC = () => {
 
 
     const router = useRouter();
+    const searchParams = useSearchParams()
+    
     const [studentId, setStudentId] = useState('');
     const [studentName, setStudentName] = useState('');
     const [department, setDepartment] = useState('');
@@ -50,7 +52,7 @@ const StudentInfo: FC = () => {
         toast.success('Successfully toasted!')
         router.push("/hall-management");
     };
-    const searchParams = useSearchParams()
+    
 
     const email = searchParams?.get('email') ?? '';
     console.log("routerrouter: student info: line 45", email)

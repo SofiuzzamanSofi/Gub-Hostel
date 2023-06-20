@@ -39,10 +39,7 @@ const SignIn: FC = () => {
 
         setLoading(true);
         try {
-            const loginRes = await loginUser({
-                email: logInputUserData.email,
-                password: logInputUserData.password
-            })
+            const loginRes = await loginUser(logInputUserData)
             if (loginRes && !loginRes.ok) {
                 setSubmitError(loginRes.error || "Error Login Function");
             }
@@ -51,7 +48,7 @@ const SignIn: FC = () => {
 
                 // Set user's full name and email in localStorage
                 localStorage.setItem('fullName', "");
-                localStorage.setItem('email', logInputUserData.email);
+                localStorage.setItem('email', mail);
 
                 // router.push('/hall-management'); // Reload the window
                 window.location.replace('/hall-management'); // Reload the window

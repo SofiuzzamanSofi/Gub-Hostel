@@ -26,11 +26,9 @@ const HallManagement: FC = () => {
 
 
     const [userLocalStorage, setUserLocalStorage] = useState<userLocalStorageTypes>()
-    const [loginUserInfoUser, setLoginUserInfoUser] = useState<loginUserInfoUserTypes>();
-    const { data: session } = useSession();
-    // const session = useSession();
-    console.log("session:", session,)
-    console.log("session er nicha userLocalStorage:", userLocalStorage?.email,)
+    const [loginUserInfoUser, setLoginUserInfoUser] = useState();
+    // const { data: session } = useSession();
+
 
     const pathname = usePathname() ?? '';
     const pathNameTotalArray = pathname.split("/")
@@ -47,6 +45,7 @@ const HallManagement: FC = () => {
             }
             else {
                 try {
+                    console.log("email on local storeage", email);
                     const loginUserInfo = await axios.post(
                         `${process.env.NEXT_PUBLIC_EXPRESS_TYPESCRIPT_API_URL}/oneUserRoute`,
                         { email }
@@ -55,13 +54,13 @@ const HallManagement: FC = () => {
                         toast.error("Please login first/ user not found on database");
                         return window.location.replace("/");
                     }
-
-                    console.log("loginUserInfo: 62", loginUserInfo?.data)
-                    setLoginUserInfoUser(loginUserInfo?.data)
-                    setUserLocalStorage({
-                        fullName: fullName || '',
-                        email: email || '',
-                    });
+                    else {
+                        setLoginUserInfoUser(loginUserInfo?.data)
+                        setUserLocalStorage({
+                            fullName: fullName || '',
+                            email: email || '',
+                        });
+                    }
                 } catch (error) {
                     // Handle error
                 }
@@ -80,13 +79,15 @@ const HallManagement: FC = () => {
 
 
     // const getHrefFunction = (urlToGo: string) => {
-    const data = {
-        email: "9sofiuzzaman.sf@gmail.com",
-        fullName: "sofi1"
-    };
+    // const data = {
+    //     email: "9sofiuzzaman.sf@gmail.com",
+    //     fullName: "sofi1"
+    // };
 
-    const queryString = new URLSearchParams(data).toString();
-    const href = `/hall-management/student-info?${queryString}`;
+    console.log("loginUserInfo: dashboard main: 86", loginUserInfoUser)
+
+    // const queryString = new URLSearchParams(data).toString();
+    // const href = `/hall-management/student-info?${queryString}`;
     // }
 
 
@@ -119,7 +120,7 @@ const HallManagement: FC = () => {
                                     <Link
                                         href={{
                                             pathname: "/hall-management/student-info",
-                                            query: data
+                                            query: loginUserInfoUser
                                         }}
                                         className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                         <AiFillInfoCircle className='w-14 h-16' />
@@ -156,7 +157,12 @@ const HallManagement: FC = () => {
                                 </>
                                 :
                                 <>
-                                    <Link href="/hall-management/seat-booking" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                                    <Link
+                                        href={{
+                                            pathname: "/hall-management/seat-booking",
+                                            query: loginUserInfoUser
+                                        }}
+                                        className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                         <FaHandPointUp className='w-14 h-16' />
                                         <p>Seat Booking</p>
                                     </Link>
