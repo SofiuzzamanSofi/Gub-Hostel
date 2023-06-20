@@ -4,6 +4,7 @@
         "moduleResolution": "Node",
         "baseUrl": "src",
         "outDir": "dist",
+        "rootDir": "src",
         "sourceMap": true,
         "noImplicitAny": true,
     },
