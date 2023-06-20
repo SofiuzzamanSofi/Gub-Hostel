@@ -12,9 +12,11 @@ export interface roomFacilitiesDataTypes {
 
 
 export interface UserTypes {
-    _id: String;
-    email: String;
+    _id?: String;
+    email?: string | null | undefined;
     fullName: String;
+    name?: string | null | undefined;
+    image?: string | null | undefined;
 };
 
 export interface InputErrorsTypes {

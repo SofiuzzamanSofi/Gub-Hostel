@@ -15,7 +15,7 @@ const Header: React.FC = () => {
         email: "",
     })
     const { data: session } = useSession();
-
+    /// console korta hobe, in future
 
 
     useEffect(() => {
@@ -103,7 +103,7 @@ const Header: React.FC = () => {
 
                                 </label>
                                 <ul tabIndex={0} className="dropdown-content menu p-3 shadow bg-base-100 rounded-box w-52"
-                                                               >
+                                >
                                     <Link href="/hall-management">
                                         <li className='py-2 text-center hover:text-green-400'>
                                             DASHBOARD
