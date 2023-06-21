@@ -1,5 +1,7 @@
 import express from 'express';
-import { getUsers } from './../schemas/usersSchema';
+import { getUsers } from '../../schemas/usersSchema';
+
+
 
 
 export const allUsers = async (req: express.Request, res: express.Response) => {

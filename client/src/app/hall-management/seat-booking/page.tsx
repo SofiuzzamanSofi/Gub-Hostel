@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation'
 import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 import { toast } from "react-hot-toast";
+import axios from "axios";
 
 
 
@@ -47,7 +48,7 @@ const SeatBooking: FC = () => {
     const pathNameTotalArray = pathname.split("/")
     const pathNameArray = pathNameTotalArray.filter((path) => path !== "").map((name) => name.replace("-", " "));
 
-    const handleSeatBooking = (e: { preventDefault: () => void; }) => {
+    const handleSeatBooking = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
 
@@ -69,25 +70,46 @@ const SeatBooking: FC = () => {
             return toast.error('Please fill out all fields properly');
         }
 
-        setLoading(true);
-        const handleSeatBookingData = {
-            fullName: studentName,
-            email: mail,
-            mobile,
-            studentId,
-            regular,
-            semester,
-            semesterYear,
-            hall,
-            level,
-            room,
+        try {
+            setLoading(true);
+            const handleSeatBookingData = {
+                fullName: studentName,
+                email: mail,
+                mobile,
+                studentId,
+                regular,
+                semester,
+                semesterYear,
+                hall,
+                level,
+                room,
+            }
+
+
+            const apiRes = await fetch(`${process.env.NEXT_PUBLIC_EXPRESS_TYPESCRIPT_API_URL}/createSeatBookRoute`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ handleSeatBookingData }),
+            });
+            if (apiRes.status === 200) {
+                toast.success(`Successfully submit your from for mail: ${mail}`)
+                router.push("/hall-management");
+            }
+            else {
+                toast.error(`Dublicate seat book request or your are trying to spaming on email: ${mail}`)
+                console.log("are you a cheater", "response from DB: ", apiRes)
+            }
+
+
+
+
+        } catch (error: unknown) {
+            setLoading(false);
+            console.log(error);
+            toast.error("error on catch ")
         }
-        console.log("handleSeatBookingData on 66:", handleSeatBookingData)
-
-
-        toast.success('Successfully toasted!')
-        // router.push("/hall-management");
-
         setLoading(false);
     };
 
@@ -179,7 +201,9 @@ const SeatBooking: FC = () => {
                                             onChange={(e) => setRegular(e.target.value)}
                                             required
                                         >
-                                            <option disabled >Choose One</option>
+                                            <option disabled value="">
+                                                Choose One
+                                            </option>
                                             <option value="Regular">Regular</option>
                                             <option value="Irregular">Irregular</option>
                                         </select>

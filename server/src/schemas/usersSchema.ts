@@ -57,7 +57,8 @@ export const UserModel = mongoose.model('User', UserSchema);
 
 
 
-
+// // create one user 
+// export const createUser = (values: Record<string, any>) => new UserModel(values).save().then((user) => user.toObject());
 // get all users
 export const getUsers = () =>  UserModel.find();
 // get one user by email 
@@ -65,9 +66,12 @@ export const getUserByEmail = (email: string) => UserModel.findOne({ email }) ;
 // get one user by id 
 export const getUserById = (id: number | string) =>  UserModel.findOne({ id }) ;
 // delete one user by id 
-export const deleteUserById = (id: number | string) =>  UserModel.findOneAndDelete({ _ud: id }) ;
+export const deleteUserById = (id: number | string) =>  UserModel.findOneAndDelete({ _id: id }) ;
 // update one user by id 
 export const updateUserById = (id: number | string, values: Record<string, any>) =>  UserModel.findByIdAndUpdate(id, values) 
+
+
+
 
 
 // // User Config
@@ -82,5 +86,3 @@ export const updateUserById = (id: number | string, values: Record<string, any>)
 //   });
   
 //   export const UserModel = mongoose.model('User', UserSchema);
-// // create one user 
-// export const createUser = (values: Record<string, any>) => new UserModel(values).save().then((user) => user.toObject());

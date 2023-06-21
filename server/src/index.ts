@@ -48,5 +48,3 @@ server.listen(port, () => {
 
 
 app.use("/", router());
-
-console.log("5 try to deploy on verc")

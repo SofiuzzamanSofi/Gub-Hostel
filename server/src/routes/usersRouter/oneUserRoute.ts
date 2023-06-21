@@ -1,5 +1,5 @@
 import express from "express";
-import { oneUser } from './../../controllers/oneUser';
+import { oneUser } from '../../controllers/users/oneUser';
 
 
 
