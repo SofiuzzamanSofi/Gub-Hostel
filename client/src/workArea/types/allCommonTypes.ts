@@ -47,3 +47,17 @@ export interface loginUserInfoUserTypes {
     // __v: Number | String;
 }
 
+
+export interface seatBookReqTypes {
+    email: String;
+    fullName: String;
+    mobile: String;
+    studentId: String;
+    regular: String;
+    semester: String;
+    semesterYear: String;
+    hall: String;
+    level: String;
+    room: String;
+}
+

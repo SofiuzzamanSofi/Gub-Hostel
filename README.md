@@ -1,5 +1,15 @@
 #Gub Hostel Management For Green University
 
+site type: Client side
+
+Admin Email: <admin@gmail.com>
+
+User / Student Email: <user@gmail.com>
+
+Password for all:  123456
+
+
+
 • Live Site [https://gub-hostel.vercel.app]
 
 • Client Site [--]

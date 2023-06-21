@@ -2,12 +2,14 @@
 
 import React from "react"
 import Link from 'next/link';
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation'
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 import { toast } from "react-hot-toast";
 import { AiOutlineSearch, AiOutlineCloseCircle, AiOutlineCheckCircle, AiOutlineCheck } from 'react-icons/ai';
+import { seatBookReqTypes } from "@/workArea/types/allCommonTypes";
+
 
 
 
@@ -16,26 +18,36 @@ const SeatBookRequest: FC = () => {
 
 
     const router = useRouter();
-    const [studentId, setStudentId] = useState('');
-    const [studentName, setStudentName] = useState('');
-    const [department, setDepartment] = useState('');
-    const [semester, setSemester] = useState('');
-    const [mobile, setMobile] = useState('');
-    const [mail, setMail] = useState('');
+    const [allSeatBookReq, setAllSeatBookReq] = useState<seatBookReqTypes[]>([]);
+
 
 
     const pathname = usePathname() ?? '';
     const pathNameTotalArray = pathname.split("/")
     const pathNameArray = pathNameTotalArray.filter((path) => path !== "").map((name) => name.replace("-", " "));
 
-    const handleSeatBooking = (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-
-        toast.success('Successfully toasted!')
-        router.push("/hall-management");
-    };
 
 
+    useEffect(() => {
+        console.log("useEffect ")
+        const loadData = async () => {
+            const apiRes = await fetch(`${process.env.NEXT_PUBLIC_EXPRESS_TYPESCRIPT_API_URL}/getSeatBookListRoute`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            if (apiRes.status === 200) {
+                const responseData = await apiRes.json();
+                // console.log("apiResapiRes", apiRes)
+                setAllSeatBookReq(responseData);
+                toast.success(`Welcome to Seat boooking request list, Be careful to accept.`)
+            }
+        }
+        loadData()
+    }, []);
+
+    console.log("allSeatBookReq ln55", allSeatBookReq)
 
     return (
         <div className='my-12'>
@@ -64,80 +76,104 @@ const SeatBookRequest: FC = () => {
 
                             <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
 
-                                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 gap-2">
-                                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                        <tr>
-                                            <th scope="col" className="p-6">
-                                                No
-                                            </th>
-                                            <th scope="col" className="p-6">
-                                                Name
-                                            </th>
-                                            <th scope="col" className="p-6">
-                                                Email
-                                            </th>
-                                            <th scope="col" className="p-6">
-                                                Phone
-                                            </th>
-                                            <th scope="col" className="p-6">
-                                                Student ID
-                                            </th>
-                                            <th scope="col" className="p-6">
-                                                Semester
-                                            </th>
-                                            <th scope="col" className="p-6">
-                                                Department
-                                            </th>
-                                            <th scope="col" className="p-6">
-                                                Hall/Level/Room
-                                            </th>
-                                            <th scope="col" className="p-6">
-                                                Action
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {
-                                            [...Array(6)?.keys()].map((tableRow: number, index: number) => (
-                                                <tr
-                                                    key={index}
-                                                    className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                        1
-                                                    </th>
-                                                    <td className="px-6 py-4">
-                                                        Rasheq Mohammad Shevik
-                                                    </td>
-                                                    <td className="px-6 py-4">
-                                                        sheviqhaque113@gmail.com
-                                                    </td>
-                                                    <td className="px-6 py-4">
-                                                        AOXS-1971
-                                                    </td>
-                                                    <td className="px-6 py-4">
-                                                        01751479585
-                                                    </td>
-                                                    <td className="px-6 py-4">
-                                                        <span>10 </span>
-                                                        <span>semester</span>
-                                                    </td>
-                                                    <td className="px-6 py-4">
-                                                        CSE
-                                                    </td>
-                                                    <td className="px-6 py-4">
-                                                        <p>Hall 01/Level/07/E107</p>
-                                                    </td>
-                                                    <td className="px-6 py-4">
-                                                        {/* <button className="bg-green-600 text-white rounded-lg px-2 py-1 cursor-no-drop">Accept</button>
+
+
+                                {
+
+                                    !allSeatBookReq ?
+
+                                        <>
+                                            <div className="text-center">
+                                                <p> No Seat Book Request is Available.</p>
+                                            </div>
+                                        </>
+                                        :
+                                        <>
+                                            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 gap-2">
+                                                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                                    <tr>
+                                                        <th scope="col" className="p-6">
+                                                            No
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Name
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Email
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Semester
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Student ID
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Phone
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Semester Year
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Hall/Level/Room
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Action
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {
+                                                        allSeatBookReq.map((tableRow, index: number) => (
+                                                            <tr
+                                                                key={index}
+                                                                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                    {index + 1}
+                                                                </th>
+                                                                <td className="px-6 py-4">
+                                                                    {tableRow?.fullName}
+                                                                </td>
+                                                                <td className="px-6 py-4">
+                                                                    {tableRow?.email}
+                                                                </td>
+                                                                <td className="px-6 py-4">
+                                                                    {tableRow?.semester}
+                                                                </td>
+                                                                <td className="px-6 py-4">
+                                                                    {tableRow?.studentId}
+                                                                </td>
+                                                                <td className="px-6 py-4">
+                                                                    {tableRow?.mobile}
+                                                                </td>
+                                                                <td className="px-6 py-4">
+                                                                    {tableRow?.semesterYear}
+                                                                </td>
+                                                                <td className="px-6 py-4">
+                                                                    <p>
+                                                                        {tableRow?.hall}
+                                                                    </p>
+                                                                    <p>
+                                                                        Level/Floor: {tableRow?.level}
+                                                                    </p>
+                                                                    <p>
+                                                                        Room No:  {tableRow?.room}
+                                                                    </p>
+                                                                    {/* <p>Hall 01/Level/07/E107</p> */}
+                                                                </td>
+                                                                <td className="px-6 py-4">
+                                                                    {/* <button className="bg-green-600 text-white rounded-lg px-2 py-1 cursor-no-drop">Accept</button>
                                                         <button className="bg-green-600 text-white rounded-lg px-2 py-1 cursor-no-drop">Remark</button> */}
-                                                        <AiOutlineCheckCircle className="bg-green-600 text-white w-6 h-6 rounded-full cursor-pointer p-1 mb-2" />
-                                                        <AiOutlineCloseCircle className="bg-red-600 text-white w-6 h-6 rounded-full cursor-pointer p-1 mt-2" />
-                                                    </td>
-                                                </tr>
-                                            ))
-                                        }
-                                    </tbody>
-                                </table>
+                                                                    <AiOutlineCheckCircle className="bg-green-600 text-white w-6 h-6 rounded-full cursor-pointer p-1 mb-2" />
+                                                                    <AiOutlineCloseCircle className="bg-red-600 text-white w-6 h-6 rounded-full cursor-pointer p-1 mt-2" />
+                                                                </td>
+                                                            </tr>
+                                                        ))
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </>
+                                }
+
                             </div>
                         </div>
                     </div>
@@ -148,11 +184,3 @@ const SeatBookRequest: FC = () => {
 };
 
 export default SeatBookRequest;
-
-
-
-
-
-
-
-
