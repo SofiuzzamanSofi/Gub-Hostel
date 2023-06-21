@@ -105,13 +105,14 @@ const SeatBookRequest: FC = () => {
                                                             Semester
                                                         </th>
                                                         <th scope="col" className="p-6">
+                                                            Semester Year
+                                                        </th>
+                                                        <th scope="col" className="p-6">
                                                             Student ID
                                                         </th>
+
                                                         <th scope="col" className="p-6">
                                                             Phone
-                                                        </th>
-                                                        <th scope="col" className="p-6">
-                                                            Semester Year
                                                         </th>
                                                         <th scope="col" className="p-6">
                                                             Hall/Level/Room
@@ -140,14 +141,15 @@ const SeatBookRequest: FC = () => {
                                                                     {tableRow?.semester}
                                                                 </td>
                                                                 <td className="px-6 py-4">
+                                                                    {tableRow?.semesterYear}
+                                                                </td>
+                                                                <td className="px-6 py-4">
                                                                     {tableRow?.studentId}
                                                                 </td>
                                                                 <td className="px-6 py-4">
                                                                     {tableRow?.mobile}
                                                                 </td>
-                                                                <td className="px-6 py-4">
-                                                                    {tableRow?.semesterYear}
-                                                                </td>
+
                                                                 <td className="px-6 py-4">
                                                                     <p>
                                                                         {tableRow?.hall}
