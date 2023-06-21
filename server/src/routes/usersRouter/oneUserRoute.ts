@@ -1,6 +1,5 @@
+import { oneUser } from "../../controllers/users/oneUser";
 import express from "express";
-import { oneUser } from '../../controllers/users/oneUser';
-
 
 
 export default (router: express.Router) => {

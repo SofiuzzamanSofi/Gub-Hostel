@@ -1,3 +1,4 @@
+
 import { createSeatBook } from '../../controllers/seatBook/createSeatBook';
 import express from 'express';
 

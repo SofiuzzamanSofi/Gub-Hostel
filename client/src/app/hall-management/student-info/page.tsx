@@ -46,16 +46,14 @@ const StudentInfo: FC = () => {
             });
             if (apiRes.status === 200) {
                 const responseData = await apiRes.json();
-                // console.log("apiResapiRes", apiRes)
+
+
                 setAllUsers(responseData);
-                toast.success(`Welcome to All User list, Be careful to accept.`)
+                toast.success(`Welcome to All User list, Be careful Baddy to accept.`)
             }
         }
         loadData()
     }, []);
-
-    console.log("allSeatBookReq ln55", allUsers)
-
 
 
 
