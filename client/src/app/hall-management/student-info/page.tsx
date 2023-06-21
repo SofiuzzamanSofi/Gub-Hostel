@@ -2,7 +2,7 @@
 
 import React from "react"
 import Link from 'next/link';
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { toast } from "react-hot-toast";
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { ParsedUrlQuery } from 'querystring';
@@ -10,6 +10,7 @@ import { usePathname } from 'next/navigation'
 import { AiOutlineSearch } from 'react-icons/ai';
 import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
+import { loginUserInfoUserTypes } from "@/workArea/types/allCommonTypes";
 
 
 
@@ -23,14 +24,8 @@ const StudentInfo: FC = () => {
 
 
     const router = useRouter();
-    const searchParams = useSearchParams()
+    const [allUsers, setAllUsers] = useState<loginUserInfoUserTypes[]>([]);
 
-    const [studentId, setStudentId] = useState('');
-    const [studentName, setStudentName] = useState('');
-    const [department, setDepartment] = useState('');
-    const [semester, setSemester] = useState('');
-    const [mobile, setMobile] = useState('');
-    const [mail, setMail] = useState('');
 
 
     const pathname = usePathname() ?? '';
@@ -40,18 +35,29 @@ const StudentInfo: FC = () => {
 
 
 
+    useEffect(() => {
+        console.log("useEffect ")
+        const loadData = async () => {
+            const apiRes = await fetch(`${process.env.NEXT_PUBLIC_EXPRESS_TYPESCRIPT_API_URL}/allUsersRoute`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            if (apiRes.status === 200) {
+                const responseData = await apiRes.json();
+                // console.log("apiResapiRes", apiRes)
+                setAllUsers(responseData);
+                toast.success(`Welcome to All User list, Be careful to accept.`)
+            }
+        }
+        loadData()
+    }, []);
+
+    console.log("allSeatBookReq ln55", allUsers)
 
 
 
-    const handleSeatBooking = (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-
-        toast.success('Successfully toasted!')
-        router.push("/hall-management");
-    };
-
-
-    const email = searchParams?.get('email') ?? '';
 
     return (
         <div className='my-12'>
@@ -78,68 +84,95 @@ const StudentInfo: FC = () => {
 
 
                             <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-                                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 gap-2">
-                                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                        <tr>
-                                            <th scope="col" className="p-6">
-                                                No
-                                            </th>
-                                            <th scope="col" className="p-6">
-                                                Student Id
-                                            </th>
-                                            <th scope="col" className="p-6">
-                                                Semester
-                                            </th>
-                                            <th scope="col" className="p-6">
-                                                Hall
-                                            </th>
-                                            <th scope="col" className="p-6">
-                                                Level
-                                            </th>
-                                            <th scope="col" className="p-6">
-                                                Room
-                                            </th>
-                                            <th scope="col" className="p-6">
-                                                Action
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {
-                                            [...Array(6)?.keys()].map((tableRow: number, index: number) => (
-                                                <tr
-                                                    key={index}
-                                                    className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                        1
-                                                    </th>
-                                                    <td className="px-6 py-4">
-                                                        AVTR-01234
-                                                    </td>
-                                                    <td className="px-6 py-4">
-                                                        <span>Spring-</span>
-                                                        <span>2021</span>
-                                                    </td>
-                                                    <td className="px-6 py-4">
-                                                        <span>Hall-</span>
-                                                        <span>1</span>
-                                                    </td>
-                                                    <td className="px-6 py-4">
-                                                        <span>Level-</span>
-                                                        <span>7</span>
-                                                    </td>
-                                                    <td className="px-6 py-4">
-                                                        <span>E-</span>
-                                                        <span>707</span>
-                                                    </td>
-                                                    <td className="px-6 py-4">
-                                                        <button className="bg-green-600 text-white rounded-lg px-2 py-1 cursor-no-drop">Remark</button>
-                                                    </td>
-                                                </tr>
-                                            ))
-                                        }
-                                    </tbody>
-                                </table>
+
+
+                                {
+
+                                    !allUsers ?
+
+                                        <>
+                                            <div className="text-center">
+                                                <p> No User / Studen is Available on Your Hostel.</p>
+                                            </div>
+                                        </>
+                                        :
+                                        <>
+
+                                            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 gap-2">
+                                                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                                    <tr>
+                                                        <th scope="col" className="p-6">
+                                                            No
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Student Id
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Semester
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Hall
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Level
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Room
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Action
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {
+                                                        allUsers.map((tableRow, index: number) => (
+                                                            <tr
+                                                                key={index}
+                                                                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                    {index + 1}
+                                                                </th>
+                                                                <td className="px-6 py-4">
+                                                                    {tableRow?.studentId}
+                                                                </td>
+                                                                <td className="px-6 py-4">
+                                                                    {tableRow?.semester}
+                                                                </td>
+                                                                <td className="px-6 py-4">
+                                                                    {
+                                                                        tableRow?.hall ?
+                                                                            tableRow?.hall
+                                                                            :
+                                                                            "No-"
+                                                                    }
+                                                                </td>
+                                                                <td className="px-6 py-4">
+                                                                    {
+                                                                        tableRow?.level ?
+                                                                            tableRow?.level
+                                                                            :
+                                                                            "No-"
+                                                                    }
+                                                                </td>
+                                                                <td className="px-6 py-4">
+                                                                    {
+                                                                        tableRow?.room ?
+                                                                            tableRow?.room
+                                                                            :
+                                                                            "No-"
+                                                                    }
+                                                                </td>
+                                                                <td className="px-6 py-4">
+                                                                    <button className="bg-green-600 text-white rounded-lg px-2 py-1 cursor-no-drop">Remark</button>
+                                                                </td>
+                                                            </tr>
+                                                        ))
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </>
+                                }
                             </div>
                         </div>
                     </div>

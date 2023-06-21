@@ -105,7 +105,7 @@ const HallManagement: FC = () => {
                                     <Link
                                         href={{
                                             pathname: "/hall-management/student-info",
-                                            query: loginUserInfoUser
+
                                         }}
                                         className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                         <AiFillInfoCircle className='w-14 h-16' />
@@ -131,7 +131,12 @@ const HallManagement: FC = () => {
                                         <GoGitCompare className='w-14 h-16' />
                                         <p>Change Room Request</p>
                                     </Link>
-                                    <Link href="/hall-management/seat-book-request" className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
+                                    <Link
+                                        href={{
+                                            pathname: "/hall-management/seat-book-request",
+
+                                        }}
+                                        className="p-4 w-44 border-[0.05rem] rounded-md flex justify-center items-center flex-col gap-2 hover:shadow-2xl hover:scale-105 dark:text-white">
                                         <GoGitPullRequest className='w-14 h-16' />
                                         <p>Seat Book Request</p>
                                     </Link>

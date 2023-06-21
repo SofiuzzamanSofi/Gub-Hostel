@@ -45,6 +45,10 @@ export interface loginUserInfoUserTypes {
     _id: String;
     __v: Number;
     // __v: Number | String;
+    hall?: String;
+    level?: String;
+    room?: String;
+
 }
 
 
