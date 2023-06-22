@@ -31,16 +31,15 @@ const SeatBookRequest: FC = () => {
     useEffect(() => {
         console.log("useEffect ")
         const loadData = async () => {
-            const apiRes = await fetch(`${process.env.NEXT_PUBLIC_EXPRESS_TYPESCRIPT_API_URL}/getSeatBookListRoute`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_EXPRESS_TYPESCRIPT_API_URL}/getSeatBookListRoute`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
-            if (apiRes.status === 200) {
-                const responseData = await apiRes.json();
-                // console.log("apiResapiRes", apiRes)
-                setAllSeatBookReq(responseData);
+            const responseData = await response.json();
+            if (responseData) {
+                                setAllSeatBookReq(responseData);
                 toast.success(`Welcome to Seat boooking request list, Be careful to accept.`)
             }
         }

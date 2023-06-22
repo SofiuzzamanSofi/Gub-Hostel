@@ -14,12 +14,6 @@ import { loginUserInfoUserTypes } from "@/workArea/types/allCommonTypes";
 
 
 
-interface QueryParams extends ParsedUrlQuery {
-    email?: string;
-    fullName?: string;
-}
-
-
 const StudentInfo: FC = () => {
 
 
@@ -46,8 +40,6 @@ const StudentInfo: FC = () => {
             });
             if (apiRes.status === 200) {
                 const responseData = await apiRes.json();
-
-
                 setAllUsers(responseData);
                 toast.success(`Welcome to All User list, Be careful Baddy to accept.`)
             }
@@ -106,7 +98,19 @@ const StudentInfo: FC = () => {
                                                             Student Id
                                                         </th>
                                                         <th scope="col" className="p-6">
+                                                            Student Name
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Email
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Department
+                                                        </th>
+                                                        <th scope="col" className="p-6">
                                                             Semester
+                                                        </th>
+                                                        <th scope="col" className="p-6">
+                                                            Mobile
                                                         </th>
                                                         <th scope="col" className="p-6">
                                                             Hall
@@ -135,7 +139,19 @@ const StudentInfo: FC = () => {
                                                                     {tableRow?.studentId}
                                                                 </td>
                                                                 <td className="px-6 py-4">
+                                                                    {tableRow?.fullName}
+                                                                </td>
+                                                                <td className="px-6 py-4">
+                                                                    {tableRow?.email}
+                                                                </td>
+                                                                <td className="px-6 py-4">
+                                                                    {tableRow?.department}
+                                                                </td>
+                                                                <td className="px-6 py-4">
                                                                     {tableRow?.semester}
+                                                                </td>
+                                                                <td className="px-6 py-4">
+                                                                    {tableRow?.mobile}
                                                                 </td>
                                                                 <td className="px-6 py-4">
                                                                     {

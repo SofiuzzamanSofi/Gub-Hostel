@@ -22,7 +22,6 @@ const SeatBooking: FC = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const fullName = localStorage.getItem('fullName');
             const email = localStorage.getItem('email');
             if (!email) {
                 toast.error("Please login first");
@@ -42,7 +41,7 @@ const SeatBooking: FC = () => {
                         toast.error("Please login first/ user not found on database");
                         return window.location.replace("/");
                     } else {
-                        setLoginUserInfoUser(loginUserInfo?.data);
+                        setLoginUserInfoUser(loginUserInfo);
                     }
                 } catch (error) {
                     // Handle error
@@ -94,9 +93,6 @@ const SeatBooking: FC = () => {
                                 <div
                                     className="px-6 my-4 py-4 shadow-2xl grid md:grid-cols-2 lg:grid-cols-3"
                                 >
-                                    <h1>
-                                        Name: {loginUserInfoUser?.fullName}
-                                    </h1>
                                     <p>
                                         Program: {loginUserInfoUser?.department}
                                     </p>
@@ -161,11 +157,11 @@ const SeatBooking: FC = () => {
                                     className="px-6 my-4 py-4 shadow-2xl grid md:grid-cols-2 lg:grid-cols-3"
                                 >
                                     <h1>
+                                        Name: {loginUserInfoUser?.fullName}
+                                    </h1>
+                                    <h1>
                                         Email: {loginUserInfoUser?.email}
                                     </h1>
-                                    <p>
-                                        Religion: { }
-                                    </p>
                                     <p>
                                         Phone No: {loginUserInfoUser?.mobile}
                                     </p>

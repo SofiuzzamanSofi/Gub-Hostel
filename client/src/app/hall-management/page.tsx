@@ -51,12 +51,12 @@ const HallManagement: FC = () => {
                             body: JSON.stringify({ email }),
                         }
                     );
-                    if (!response.ok) {
+                    const loginUserInfo = await response.json();
+                    if (!loginUserInfo._id) {
                         toast.error('Please login first/user not found in the database');
                         return window.location.replace('/');
                     } else {
-                        const loginUserInfo = await response.json();
-                        setLoginUserInfoUser(loginUserInfo?.data);
+                        setLoginUserInfoUser(loginUserInfo);
                         setUserLocalStorage({
                             fullName: fullName || '',
                             email: email || '',
@@ -78,7 +78,7 @@ const HallManagement: FC = () => {
 
 
 
-    // console.log("loginUserInfo: dashboard main: 81", loginUserInfoUser)
+    // console.log("loginUserInfo: dashboard main: 60", loginUserInfoUser)
 
 
 
