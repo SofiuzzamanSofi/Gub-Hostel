@@ -173,6 +173,7 @@ const Signup: FC = () => {
                                         className="my-4 p-4 rounded-md bg-[#CDCDCD] dark:bg-gray-700 dark:text-white"
                                         type="email"
                                         name="email"
+                                        id='email'
                                         placeholder="Student Mail"
                                         value={mail}
                                         onChange={(e) => setMail(e.target.value)}
