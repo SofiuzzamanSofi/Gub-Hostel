@@ -1,12 +1,11 @@
 "use client"
 
-import React, { useEffect } from "react"
 import { FC, useState } from 'react';
-import { usePathname } from 'next/navigation'
-import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 import { toast } from "react-hot-toast";
-import axios from "axios";
+import React, { useEffect } from "react"
+import { usePathname } from 'next/navigation'
 import { loginUserInfoUserTypes } from './../../../workArea/types/allCommonTypes';
+import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 
 
 
@@ -14,11 +13,7 @@ import { loginUserInfoUserTypes } from './../../../workArea/types/allCommonTypes
 
 const SeatBooking: FC = () => {
 
-
-
     const [loginUserInfoUser, setLoginUserInfoUser] = useState<loginUserInfoUserTypes>();
-
-
 
     const pathname = usePathname() ?? '';
     const pathNameTotalArray = pathname.split("/")
@@ -32,19 +27,22 @@ const SeatBooking: FC = () => {
             if (!email) {
                 toast.error("Please login first");
                 return window.location.replace("/");
-            }
-            else {
+            } else {
                 try {
-                    const loginUserInfo = await axios.post(
-                        `${process.env.NEXT_PUBLIC_EXPRESS_TYPESCRIPT_API_URL}/oneUserRoute`,
-                        { email }
-                    );
+                    const response = await fetch(`${process.env.NEXT_PUBLIC_EXPRESS_TYPESCRIPT_API_URL}/oneUserRoute`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ email }),
+                    });
+                    const loginUserInfo = await response.json();
+
                     if (!loginUserInfo) {
                         toast.error("Please login first/ user not found on database");
                         return window.location.replace("/");
-                    }
-                    else {
-                        setLoginUserInfoUser(loginUserInfo?.data)
+                    } else {
+                        setLoginUserInfoUser(loginUserInfo?.data);
                     }
                 } catch (error) {
                     // Handle error

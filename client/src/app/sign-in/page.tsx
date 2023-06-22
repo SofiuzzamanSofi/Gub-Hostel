@@ -1,14 +1,13 @@
 "use client"
 
-import { AxiosError } from "axios"
+import Link from 'next/link';
 import { FC, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation'
 import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
-import Link from 'next/link';
 import { loginUser } from '@/workArea/nextAuth/helpers';
-import { toast } from 'react-hot-toast';
 
 
 const SignIn: FC = () => {
@@ -29,7 +28,6 @@ const SignIn: FC = () => {
 
     const handleSignIn = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-
 
         const logInputUserData = {
             email: mail,
@@ -54,19 +52,15 @@ const SignIn: FC = () => {
 
             }
         } catch (error) {
-            if (error instanceof AxiosError) {
-                console.log("error?.response?.data?.error:", error?.response?.data?.error)
-                toast.error(error?.response?.data?.error || "Something went wrong");
-                setSubmitError(error?.response?.data?.error);
-            } else {
+            if (error) {
+                console.log("error?.response?.data?.error: handleSignIn 57page:", error)
                 setSubmitError('Error: on Catch block');
                 toast.error('Something went wrong on the catch block');
+
             }
-        }
-        setLoading(false);
+            setLoading(false);
+        };
     };
-
-
 
 
     return (

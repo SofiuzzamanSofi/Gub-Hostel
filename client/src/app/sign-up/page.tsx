@@ -2,13 +2,12 @@
 
 
 import { FC, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation';
+import { loginUser } from '@/workArea/nextAuth/helpers';
 import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
-import { toast } from 'react-hot-toast';
-import axios, { AxiosError } from 'axios';
-import { loginUser } from '@/workArea/nextAuth/helpers';
 
 
 
@@ -30,6 +29,7 @@ const Signup: FC = () => {
         .filter((path) => path !== '')
         .map((name) => name.replace('-', ' '));
 
+
     const handleSignUp = async (e: { preventDefault: () => void }) => {
         e.preventDefault();
 
@@ -43,7 +43,6 @@ const Signup: FC = () => {
             mail.trim() === '' ||
             password.trim() === ''
         ) {
-            
             // Display an error message or handle the validation failure
             return toast.error('Please fill out all fields properly');
         } else {
@@ -58,27 +57,30 @@ const Signup: FC = () => {
                     semester,
                     mobile,
                 };
-        
-                const apiRes = await axios.post(
-                    `${process.env.NEXT_PUBLIC_SERVER_OR_API_URL}/auth/signup`,
-                    userInputData
-                );
-                if (apiRes?.data?.success) {
 
+                const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_OR_API_URL}/auth/signup`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(userInputData),
+                });
+                const apiRes = await response.json();
+
+                if (apiRes?.success) {
                     const loginRes = await loginUser({
                         email: userInputData.email,
-                        password: userInputData.password
-                    })
+                        password: userInputData.password,
+                    });
+
                     if (loginRes && !loginRes.ok) {
-                        setSubmitError(loginRes.error || "Error Login Function");
-                    }
-                    else {
+                        setSubmitError(loginRes.error || 'Error Login Function');
+                    } else {
                         toast.success(`Successfully signed up. Please check your email and sign up ${studentName}`);
 
                         // Set user's full name and email in localStorage
                         localStorage.setItem('fullName', studentName);
                         localStorage.setItem('email', mail);
-
 
                         // router.push('/verify-email'); // Reload the window
                         window.location.replace('/verify-email'); // Reload the window
@@ -86,10 +88,10 @@ const Signup: FC = () => {
                 }
             } catch (error: unknown) {
                 console.log(error);
-                if (error instanceof AxiosError) {
-                    console.log("error?.response?.data?.error:", error?.response?.data?.error)
-                    toast.error(error?.response?.data?.error || "Something went wrong");
-                    setSubmitError(error?.response?.data?.error);
+                if (error instanceof Error) {
+                    console.log('error:', error);
+                    toast.error(error.message || 'Something went wrong');
+                    setSubmitError(error.message);
                 } else {
                     setSubmitError('Error: on Catch block');
                     toast.error('Something went wrong on the catch block');
@@ -98,6 +100,7 @@ const Signup: FC = () => {
             setLoading(false);
         }
     };
+
 
 
     return (

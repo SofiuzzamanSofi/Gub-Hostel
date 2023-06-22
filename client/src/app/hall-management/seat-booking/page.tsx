@@ -1,15 +1,12 @@
 "use client"
 
 import React from "react"
-import Link from 'next/link';
 import { FC, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { toast } from "react-hot-toast";
 import { usePathname } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation';
 import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
-import { toast } from "react-hot-toast";
-import axios from "axios";
-
 
 
 
@@ -19,7 +16,6 @@ const SeatBooking: FC = () => {
 
     const router = useRouter();
     const searchParams = useSearchParams()
-
 
     const [studentName, setStudentName] = useState(
         searchParams?.get('fullName') ?? ''
@@ -42,15 +38,14 @@ const SeatBooking: FC = () => {
     const [submitError, setSubmitError] = useState('');
     const [loading, setLoading] = useState(false);
 
-
-
     const pathname = usePathname() ?? '';
     const pathNameTotalArray = pathname.split("/")
     const pathNameArray = pathNameTotalArray.filter((path) => path !== "").map((name) => name.replace("-", " "));
 
+
+
     const handleSeatBooking = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-
 
         // validate form
         if (
@@ -65,7 +60,6 @@ const SeatBooking: FC = () => {
             level.trim() === '' ||
             room.trim() === ''
         ) {
-
             // Display an error message or handle the validation failure
             return toast.error('Please fill out all fields properly');
         }
@@ -84,8 +78,6 @@ const SeatBooking: FC = () => {
                 level,
                 room,
             }
-
-
             const apiRes = await fetch(`${process.env.NEXT_PUBLIC_EXPRESS_TYPESCRIPT_API_URL}/createSeatBookRoute`, {
                 method: 'POST',
                 headers: {
@@ -101,10 +93,6 @@ const SeatBooking: FC = () => {
                 toast.error(`Dublicate seat book request or your are trying to spaming on email: ${mail}`)
                 console.log("are you a cheater", "response from DB: ", apiRes)
             }
-
-
-
-
         } catch (error: unknown) {
             setLoading(false);
             console.log(error);
@@ -113,20 +101,11 @@ const SeatBooking: FC = () => {
         setLoading(false);
     };
 
-    // const email = searchParams?.get('email') ?? '';
-    // const fullName = searchParams?.get('fullName') ?? '';
-    // const mobileFromDB = searchParams?.get('mobile') ?? '';
-    // const studentIdFromDB = searchParams?.get('studentId') ?? '';
-    // setStudentName(fullName);
-    // setMail(email);
-    // setMobile(mobileFromDB);
-    // setStudentId(studentIdFromDB);
 
-    // console.log("seat booking from page line 45:", email)
+
 
     return (
         <div className='my-12'>
-            {/* <HomeImage /> */}
             <div className="container mx-auto">
                 <div className="">
                     <div className="text-center">
