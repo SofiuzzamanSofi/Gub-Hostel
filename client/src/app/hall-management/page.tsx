@@ -35,26 +35,33 @@ const HallManagement: FC = () => {
     const pathNameArray = pathNameTotalArray.filter((path) => path !== "").map((name) => name.replace("-", " "));
 
 
+
+
     useEffect(() => {
         const fetchData = async () => {
             const fullName = localStorage.getItem('fullName');
             const email = localStorage.getItem('email');
             if (!email) {
-                toast.error("Please login first");
-                return window.location.replace("/");
-            }
-            else {
+                toast.error('Please login first');
+                return window.location.replace('/');
+            } else {
                 try {
-                    const loginUserInfo = await axios.post(
+                    const response = await fetch(
                         `${process.env.NEXT_PUBLIC_EXPRESS_TYPESCRIPT_API_URL}/oneUserRoute`,
-                        { email }
+                        {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ email }),
+                        }
                     );
-                    if (!loginUserInfo) {
-                        toast.error("Please login first/ user not found on database");
-                        return window.location.replace("/");
-                    }
-                    else {
-                        setLoginUserInfoUser(loginUserInfo?.data)
+                    if (!response.ok) {
+                        toast.error('Please login first/user not found in the database');
+                        return window.location.replace('/');
+                    } else {
+                        const loginUserInfo = await response.json();
+                        setLoginUserInfoUser(loginUserInfo?.data);
                         setUserLocalStorage({
                             fullName: fullName || '',
                             email: email || '',
@@ -73,6 +80,8 @@ const HallManagement: FC = () => {
             // Cleanup code
         };
     }, []);
+
+
 
     console.log("loginUserInfo: dashboard main: 86", loginUserInfoUser)
 
