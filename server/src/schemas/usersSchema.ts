@@ -28,7 +28,7 @@ const UserSchema = new mongoose.Schema({
     department: {
         type: String,
         required: [true, "department is required"],
-        minLength: [4, "department should be atleast 4 characters long"],
+        minLength: [1, "department should be atleast 1 characters long"],
         maxLength: [30, "department should be less than 30 characters"]
     },
     semester: {
