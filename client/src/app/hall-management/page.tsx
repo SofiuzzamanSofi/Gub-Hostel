@@ -78,10 +78,7 @@ const HallManagement: FC = () => {
 
 
 
-    console.log("loginUserInfo: dashboard main: 86", loginUserInfoUser)
-
-
-
+    // console.log("loginUserInfo: dashboard main: 81", loginUserInfoUser)
 
 
 
