@@ -1,6 +1,6 @@
 
 import express from 'express';
-import { getSeatBookingList } from '../../schemas/seatBookSchema';
+import { getSeatBookingList } from '../../model/seatBookSchema';
 
 
 export const allSeatBookList = async (req: express.Request, res: express.Response) => {

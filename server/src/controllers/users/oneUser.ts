@@ -1,5 +1,5 @@
 import express from 'express';
-import { getUserByEmail } from '../../schemas/usersSchema';
+import { getUserByEmail } from '../../model/usersSchema';
 
 
 

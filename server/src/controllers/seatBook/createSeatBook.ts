@@ -1,6 +1,6 @@
 
 import express from 'express';
-import { createSeatBookOne } from './../../schemas/seatBookSchema';
+import { createSeatBookOne } from '../../model/seatBookSchema';
 
 
 export const createSeatBook = async (req: express.Request, res: express.Response) => {
