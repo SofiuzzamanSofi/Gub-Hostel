@@ -1,8 +1,8 @@
-import { roomFacilitiesDataTypes } from "@/workArea/types/allCommonTypes";
+import { RoomFacilitiesDataTypes } from "@/workArea/types/allCommonTypes";
 
 
 
-export const roomFacilitiesData: roomFacilitiesDataTypes[] = [
+export const roomFacilitiesData: RoomFacilitiesDataTypes[] = [
     {
         'id': '01',
         'title': 'Security',

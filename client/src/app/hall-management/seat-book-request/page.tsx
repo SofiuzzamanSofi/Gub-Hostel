@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation'
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 import { toast } from "react-hot-toast";
 import { AiOutlineSearch, AiOutlineCloseCircle, AiOutlineCheckCircle, AiOutlineCheck } from 'react-icons/ai';
-import { seatBookReqTypes } from "@/workArea/types/allCommonTypes";
+import { SeatBookReqTypes } from "@/workArea/types/allCommonTypes";
 
 
 
@@ -18,7 +18,7 @@ const SeatBookRequest: FC = () => {
 
 
     const router = useRouter();
-    const [allSeatBookReq, setAllSeatBookReq] = useState<seatBookReqTypes[]>([]);
+    const [allSeatBookReq, setAllSeatBookReq] = useState<SeatBookReqTypes[]>([]);
 
 
 
@@ -29,7 +29,6 @@ const SeatBookRequest: FC = () => {
 
 
     useEffect(() => {
-        console.log("useEffect ")
         const loadData = async () => {
             const response = await fetch(`${process.env.NEXT_PUBLIC_EXPRESS_TYPESCRIPT_API_URL}/getSeatBookListRoute`, {
                 method: 'POST',
@@ -39,14 +38,13 @@ const SeatBookRequest: FC = () => {
             });
             const responseData = await response.json();
             if (responseData) {
-                                setAllSeatBookReq(responseData);
+                setAllSeatBookReq(responseData);
                 toast.success(`Welcome to Seat boooking request list, Be careful to accept.`)
             }
         }
         loadData()
     }, []);
 
-    console.log("allSeatBookReq ln55", allSeatBookReq)
 
     return (
         <div className='my-12'>

@@ -1,5 +1,5 @@
 
-import { allUsers } from '../../controllers/users/allUsers';
+import { allUsers } from '../../controllers/userController/allUserController';
 import express from 'express';
 
 // import 

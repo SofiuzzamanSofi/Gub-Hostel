@@ -9,7 +9,6 @@ interface CommonHomeButtonProps {
 
 const CommonHomeButton: FC<CommonHomeButtonProps> = ({ pathNameArray }) => {
     const arreytoLinkGenerated = (path: string) => {
-        // console.log('path from line 15:', path);
         return `/hall-management`; // Modify the logic as per your requirement
     };
 

@@ -1,4 +1,4 @@
-import { oneUser } from "../../controllers/users/oneUser";
+import { oneUser } from "../../controllers/userController/oneUserController";
 import express from "express";
 
 

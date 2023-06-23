@@ -14,10 +14,9 @@ export const createSeatBook = async (req: express.Request, res: express.Response
     }
     try {
 
-        // console.log("Body is line 17:", handleSeatBookingData)
-
 
         // check booking is availabel -- 
+//
 
 
         const createSeatBookDataRes = await createSeatBookOne(handleSeatBookingData)

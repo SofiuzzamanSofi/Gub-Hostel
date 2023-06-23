@@ -4,7 +4,7 @@ import { FC, useState } from 'react';
 import { toast } from "react-hot-toast";
 import React, { useEffect } from "react"
 import { usePathname } from 'next/navigation'
-import { loginUserInfoUserTypes } from './../../../workArea/types/allCommonTypes';
+import { LoginUserInfoUserTypes } from './../../../workArea/types/allCommonTypes';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 
 
@@ -13,7 +13,7 @@ import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeB
 
 const SeatBooking: FC = () => {
 
-    const [loginUserInfoUser, setLoginUserInfoUser] = useState<loginUserInfoUserTypes>();
+    const [loginUserInfoUser, setLoginUserInfoUser] = useState<LoginUserInfoUserTypes>();
 
     const pathname = usePathname() ?? '';
     const pathNameTotalArray = pathname.split("/")

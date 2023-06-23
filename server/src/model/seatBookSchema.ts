@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 const SeatBookSchema = new mongoose.Schema({
     email: {
         type: String,
+        unique: true,
         required: [true, "Please enter a valid email"],
         // match: [/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "Invalid Email Address"],
     },

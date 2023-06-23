@@ -38,9 +38,6 @@ const handler = async (
 
             const hashedPassword = await hash(password, 12)
 
-
-            console.log("mobilemobile object:", mobile)
-
             try {
                 const data = await User.create({
                     fullName,

@@ -1,9 +1,10 @@
 import express from 'express';
-import allUsersRoute from './usersRouter/allUsersRoute';
-import oneUserRoute from './usersRouter/oneUserRoute';
-import mainHomeRoute from './mainHomeRoute/mainHomeRoute';
-import createSeatBookRoute from './seatBookRoute/createSeatBookRoute';
-import getSeatBookListRoute from './seatBookRoute/getSeatBookListRoute';
+import allUsersRoute from './usersRouter/allUsersRoutes';
+import oneUserRoute from './usersRouter/oneUserRoutes';
+import mainHomeRoute from './mainHomeRoutes/mainHomeRoutes';
+import createSeatBookRoute from './seatBookRoutes/createSeatBookRoutes';
+import getSeatBookListRoute from './seatBookRoutes/getSeatBookListRoutes';
+import complainRoutes from './complainRoutes/complainRoutes';
 
 
 
@@ -21,6 +22,9 @@ export default (): express.Router => {
     // seat book route 
     createSeatBookRoute(router);
     getSeatBookListRoute(router);
+
+    // complain route
+    complainRoutes(router);
 
     return router;
 };

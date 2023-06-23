@@ -11,7 +11,7 @@ import { BsFillInfoSquareFill, BsFillPersonFill } from 'react-icons/bs';
 import { FaHandPointUp, FaRecycle, FaQuestionCircle } from 'react-icons/fa';
 import { MdNotificationsActive, MdOutlineCancel, MdFreeCancellation } from 'react-icons/md';
 import { AiFillFile, AiFillHome, AiFillInfoCircle, AiOutlineUnorderedList } from 'react-icons/ai';
-import { userLocalStorageTypes } from './../../workArea/types/allCommonTypes';
+import { UserLocalStorageTypes } from './../../workArea/types/allCommonTypes';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
 
 
@@ -21,7 +21,7 @@ import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeB
 const HallManagement: FC = () => {
 
 
-    const [userLocalStorage, setUserLocalStorage] = useState<userLocalStorageTypes>()
+    const [userLocalStorage, setUserLocalStorage] = useState<UserLocalStorageTypes>()
     const [loginUserInfoUser, setLoginUserInfoUser] = useState();
 
 
@@ -78,7 +78,7 @@ const HallManagement: FC = () => {
 
 
 
-    // console.log("loginUserInfo: dashboard main: 60", loginUserInfoUser)
+    // console.log("loginUserInfo: dashboard main: 81", loginUserInfoUser)
 
 
 

@@ -10,7 +10,7 @@ import { usePathname } from 'next/navigation'
 import { AiOutlineSearch } from 'react-icons/ai';
 import CommonButton from '@/workArea/components/CommonButton/CommonButton';
 import CommonHomeButton from '@/workArea/components/CommonHomeButton/CommonHomeButton';
-import { loginUserInfoUserTypes } from "@/workArea/types/allCommonTypes";
+import { LoginUserInfoUserTypes } from "@/workArea/types/allCommonTypes";
 
 
 
@@ -18,7 +18,7 @@ const StudentInfo: FC = () => {
 
 
     const router = useRouter();
-    const [allUsers, setAllUsers] = useState<loginUserInfoUserTypes[]>([]);
+    const [allUsers, setAllUsers] = useState<LoginUserInfoUserTypes[]>([]);
 
 
 
@@ -30,7 +30,6 @@ const StudentInfo: FC = () => {
 
 
     useEffect(() => {
-        console.log("useEffect ")
         const loadData = async () => {
             const apiRes = await fetch(`${process.env.NEXT_PUBLIC_EXPRESS_TYPESCRIPT_API_URL}/allUsersRoute`, {
                 method: 'POST',

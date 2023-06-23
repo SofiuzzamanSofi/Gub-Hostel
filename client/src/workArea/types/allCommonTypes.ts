@@ -1,10 +1,10 @@
-export interface hallFacilitiesDataTypes {
+export interface HallFacilitiesDataTypes {
     id: String;
     title: String;
     para: String;
 };
 
-export interface roomFacilitiesDataTypes {
+export interface RoomFacilitiesDataTypes {
     id: String;
     title: String;
     para: String[];
@@ -29,12 +29,12 @@ export interface LoginUserParamsTypes {
 }
 
 
-export interface userLocalStorageTypes {
+export interface UserLocalStorageTypes {
     fullName?: String;
     email?: String;
 }
 
-export interface loginUserInfoUserTypes {
+export interface LoginUserInfoUserTypes {
     fullName: String;
     email: String;
     department: String;
@@ -52,7 +52,7 @@ export interface loginUserInfoUserTypes {
 }
 
 
-export interface seatBookReqTypes {
+export interface SeatBookReqTypes {
     email: String;
     fullName: String;
     mobile: String;
@@ -65,3 +65,16 @@ export interface seatBookReqTypes {
     room: String;
 }
 
+export interface ComplainTypes {
+    email?: string;
+    fullName?: string;
+    studentId?: string;
+    department?: string;
+    semester?: string;
+    mobile?: string;
+    complainFor?: string;
+    complainDetails?: string;
+    hall?: string;
+    level?: string;
+    room: string;
+}

@@ -1,6 +1,6 @@
-import { hallFacilitiesDataTypes } from "@/workArea/types/allCommonTypes";
+import { HallFacilitiesDataTypes } from "@/workArea/types/allCommonTypes";
 
-export const hallFacilitiesData: hallFacilitiesDataTypes[] = [
+export const hallFacilitiesData: HallFacilitiesDataTypes[] = [
     {
         'id': '01',
         'title': 'Smart Living Scope',

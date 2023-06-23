@@ -1,5 +1,5 @@
 
-import { allSeatBookList } from '../../controllers/seatBook/allSeatBookList';
+import { allSeatBookList } from '../../controllers/seatBookController/allSeatBookListController';
 import express from 'express';
 
 
