@@ -10,7 +10,7 @@ import { UserLocalStorageTypes } from "@/workArea/types/allCommonTypes";
 const Complain = () => {
     const router = useRouter();
 
-    const [userLocalStorage, setUserLocalStorage] = useState<UserLocalStorageTypes>()
+    const [userLocalStorage, setUserLocalStorage] = useState<UserLocalStorageTypes>() //not used this variable 
     const [loginUserInfoUser, setLoginUserInfoUser] = useState<{}>("");
     const [checkedComplaint, setCheckedComplaint] = useState<string | null>(null);
     const [textAreaData, setTextAreaData] = useState<string>("");
