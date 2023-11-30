@@ -10,7 +10,9 @@ Password for all:  123456
 
 
 
-• Live Site [https://gub-hostel.vercel.app]
+• Live Site [Live-Site](https://gub-hostel.vercel.app)
+
+• Figma Design [Figma-Design](https://www.figma.com/community/file/1311407985975326274)
 
 • Client Site [--]
 
